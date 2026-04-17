@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devenir partenaire installateur — ADSI Fonti SA</title>
+<meta name="description" content="Vous êtes installateur et cherchez une centrale de télésurveillance réactive, humaine et sur mesure ? Découvrez notre programme partenaires.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy-000:#05101C;--navy-100:#0A1A2A;--navy-300:#152B40;--teal-700:#14564F;--teal-500:#1F7A6F;--teal-300:#6BBAA5;--red:#D12127;--ink:#0B1420;--ink-2:#1A2332;--ink-3:#3A4555;--ink-4:#5A6575;--ink-5:#8591A0;--line:#E2E6EA;--line-2:#EEF1F3;--paper:#F5F7F9;--sans:'Inter',sans-serif;--max:1240px;--nav-h:76px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:overlay}
+body{font-family:var(--sans);background:#fff;color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:var(--nav-h);overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:var(--max);margin:0 auto;padding:0 32px}
+@keyframes pulse-red{0%,100%{box-shadow:0 0 0 0 rgba(209,33,39,.5)}50%{box-shadow:0 0 0 6px rgba(209,33,39,0)}}
+.pulse-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse-red 2s infinite;display:inline-block;flex-shrink:0}
+.reveal{opacity:0;transform:translateY(20px);filter:blur(6px);transition:opacity .8s cubic-bezier(.32,.72,0,1),transform .8s cubic-bezier(.32,.72,0,1),filter .8s cubic-bezier(.32,.72,0,1)}
+.reveal.visible{opacity:1;transform:translateY(0);filter:blur(0)}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy-000);transition:background .3s ease;border-bottom:1px solid transparent;height:var(--nav-h);display:flex;align-items:center}
+nav.scrolled{background:rgba(5,16,28,.72);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);border-bottom-color:rgba(255,255,255,.08)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 32px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative}
+.nav-logo{flex-shrink:0;z-index:101;display:flex;align-items:center}
+.nav-logo img{height:40px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:28px;flex:1;justify-content:center}
+.nav-links a{color:rgba(255,255,255,.78);font-size:13.5px;font-weight:500;transition:color .15s;white-space:nowrap;position:relative}
+.nav-links a:hover{color:#fff}.nav-links a.active{color:#fff;font-weight:600}
+.nav-links a.active::after{content:'';display:block;position:absolute;bottom:-8px;left:0;right:0;height:2px;background:var(--red)}
+.nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.nav-phone{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:600;font-size:13px;white-space:nowrap;font-feature-settings:'tnum' 1;transition:color .15s}
+.nav-phone:hover{color:var(--teal-300)}
+.nav-phone .phone-icon{width:16px;height:16px;flex-shrink:0}
+.nav-dd .burger-icon{display:inline-flex;flex-direction:column;gap:4px;width:18px;height:14px;justify-content:center;align-items:stretch}
+.nav-dd .burger-icon span{display:block;height:2px;width:100%;background:currentColor;transition:transform .28s cubic-bezier(.4,0,.2,1),opacity .2s ease}
+nav.dd-open .nav-dd .burger-icon span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+nav.dd-open .nav-dd .burger-icon span:nth-child(2){opacity:0}
+nav.dd-open .nav-dd .burger-icon span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.btn-nav{background:var(--red);color:#fff!important;padding:10px 18px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .15s;white-space:nowrap}
+.btn-nav:hover{background:#a81a1f}
+.nav-dd{display:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:#fff;padding:10px 16px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;align-items:center;gap:8px;transition:all .15s;font-family:inherit}
+.nav-dd:hover{background:rgba(255,255,255,.1)}
+.nav-dd .chev{width:10px;height:10px;transition:transform .25s ease;flex-shrink:0}
+nav.dd-open .nav-dd .chev{transform:rotate(180deg)}
+
+.page-hero{position:relative;color:#fff;padding:88px 0 112px;overflow:hidden;border-bottom:3px solid var(--red);background:linear-gradient(rgba(5,16,28,.58),rgba(5,16,28,.75)),url('BANNIERES/PAGE%20PARTENAIRES.png') center/cover no-repeat,var(--navy-000)}
+/* Hover effects */
+.benefit,.pch-cell,.brand-cell{transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease,background .2s ease,border-color .3s ease}
+.benefit:hover{transform:translateY(-4px);box-shadow:0 16px 32px -12px rgba(15,23,42,.15);border-color:var(--teal-500)}
+.pch-cell:hover{background:#fff}
+.brand-cell:hover{background:rgba(255,255,255,.06)}
+
+/* Section backgrounds — visible mais lisible */
+.block.bg-patrol,.block.alt.bg-biometric{position:relative;isolation:isolate}
+.block.bg-patrol::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.92)),url('PICTURES/background_56281909.jpg') center/cover no-repeat;z-index:-1}
+.block.alt.bg-biometric::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(245,247,249,.86),rgba(245,247,249,.92)),url('PICTURES/b77gDG6f7j4ED4A6pBCh.jpg') center/cover no-repeat;z-index:-1}
+
+/* Cartes avec image en fond — textes sur overlay */
+.benefit.with-bg{position:relative;overflow:hidden;isolation:isolate;color:var(--ink)}
+.benefit.with-bg::before{content:'';position:absolute;inset:0;background-size:cover;background-position:center;opacity:1;z-index:-2}
+.benefit.with-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.82),rgba(255,255,255,.92));z-index:-1}
+.benefit.bg-service::before{background-image:url('PICTURES/001.jpg')}
+.benefit.bg-protocole::before{background-image:url('PICTURES/470632378.jpeg')}
+.benefit.bg-docs::before{background-image:url('PICTURES/Salle%20de%20contr%C3%B4le%20de%20s%C3%A9curit%C3%A9%20high-tech.png')}
+
+/* Section visuelle biométrie — nouvelle image dans section offre */
+.pch-hero{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.pch-hero-img{aspect-ratio:16/9;background-size:cover;background-position:center;border:1px solid var(--line);position:relative}
+.pch-hero-img::after{content:'';position:absolute;top:0;left:0;width:40px;height:3px;background:var(--red)}
+.pch-hero-txt h4{font-size:20px;font-weight:700;letter-spacing:-.015em;margin-bottom:12px}
+.pch-hero-txt p{font-size:15px;color:var(--ink-4);line-height:1.65;margin-bottom:16px}
+@media(max-width:900px){.pch-hero{grid-template-columns:1fr}}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.4) 100%);pointer-events:none;z-index:1}
+.page-hero-inner{position:relative;z-index:2;max-width:820px}
+.breadcrumb{font-size:11.5px;color:rgba(255,255,255,.5);margin-bottom:28px;display:flex;align-items:center;gap:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;flex-wrap:wrap}
+.breadcrumb a{color:rgba(255,255,255,.5);transition:color .15s}.breadcrumb a:hover{color:#fff}
+.breadcrumb .sep{opacity:.4}
+.page-hero h1{font-size:clamp(32px,5vw,58px);font-weight:700;line-height:1.05;letter-spacing:-.03em;margin-bottom:22px}
+.page-hero h1 .accent{color:var(--teal-300)}
+.page-hero-sub{font-size:17px;line-height:1.6;color:rgba(255,255,255,.72);max-width:640px;margin-bottom:32px}
+.hero-ctas{display:flex;gap:0;flex-wrap:wrap;align-items:stretch}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--red);color:#fff;padding:15px 26px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .15s}
+.btn-primary:hover{background:#a81a1f}
+.btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:10px;color:#fff;padding:14px 22px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border:1px solid rgba(255,255,255,.2);background:transparent;transition:border-color .15s,background .15s}
+.btn-outline:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.03)}
+
+section.block{padding:112px 0}
+section.block.alt{background:var(--paper)}
+.section-num{color:var(--red);font-weight:700;font-size:inherit;letter-spacing:inherit;margin-right:0}
+.section-label{display:inline;font-size:inherit;font-weight:700;color:var(--red);letter-spacing:inherit;text-transform:none;margin-right:0}
+.section-label::after{content:' — ';color:var(--ink-4);font-weight:400;letter-spacing:0;text-transform:none}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11.5px;font-weight:700;color:var(--red);letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--red)}
+.section-head{max-width:720px;margin-bottom:56px}
+h2.section-title{font-size:clamp(28px,3.2vw,42px);font-weight:700;line-height:1.08;letter-spacing:-.025em;margin-bottom:18px}
+h2.section-title .accent{color:var(--teal-500)}
+.section-lead{font-size:17px;color:var(--ink-4);line-height:1.6;max-width:620px}
+
+.section-cta{margin-top:56px;padding-top:32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.section-cta-txt{font-size:14.5px;font-weight:500;color:var(--ink-3);flex:1;min-width:240px}
+.section-cta-txt strong{color:var(--ink);font-weight:700}
+.section-cta-btns{display:flex;gap:0;align-items:stretch;flex-wrap:wrap}
+.btn-dark{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:#fff;padding:13px 22px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .15s,transform .15s}
+.btn-dark:hover{background:var(--red);transform:translateY(-1px)}
+.btn-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;color:var(--teal-500);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:13px 18px;border-bottom:2px solid transparent;transition:border-color .15s,gap .15s}
+.btn-link:hover{border-color:var(--teal-500);gap:12px}
+
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.benefit{background:#fff;padding:40px 36px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;transition:background .15s}
+.benefit:hover{background:var(--paper)}
+.benefit::before{content:'';position:absolute;top:0;left:0;width:40px;height:2px;background:var(--red)}
+.benefit-n{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.08em;margin-bottom:20px;text-transform:uppercase}
+.benefit h3{font-size:19px;font-weight:700;margin-bottom:12px;letter-spacing:-.01em}
+.benefit p{font-size:14px;color:var(--ink-4);line-height:1.65}
+
+.pch{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.pch-cell{background:#fff;padding:28px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:flex-start}
+.pch-cell-ico{width:8px;height:8px;background:var(--red);flex-shrink:0;margin-top:10px}
+.pch-txt h4{font-size:15.5px;font-weight:700;margin-bottom:6px}
+.pch-txt p{font-size:13.5px;color:var(--ink-4);line-height:1.55}
+
+/* BRANDS — logos ×3 */
+.brands-section{padding:112px 0;background:var(--navy-000);position:relative;overflow:hidden;border-top:1px solid var(--navy-300);border-bottom:1px solid var(--navy-300)}
+.brands-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.4) 100%);pointer-events:none;z-index:1}
+.brands-head{position:relative;z-index:1;text-align:center;margin-bottom:56px}
+.brands-lab{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.brands-lab::before,.brands-lab::after{content:'';width:24px;height:1px;background:rgba(255,255,255,.2)}
+.brands-head h3{font-size:clamp(22px,3vw,28px);font-weight:700;color:#fff;letter-spacing:-.02em}
+/* Carrousel marques */
+.brands-carousel{position:relative;z-index:1}
+.brands-carousel-head{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border:1px solid rgba(255,255,255,.1);border-bottom:none;gap:16px;flex-wrap:wrap}
+.brands-carousel-title{font-size:11px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:.12em;text-transform:uppercase}
+.brands-carousel-counter{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.06em;font-feature-settings:'tnum' 1;margin-left:14px}
+.brands-carousel-controls{display:flex;gap:0}
+.brands-ctrl{width:44px;height:44px;background:transparent;border:1px solid rgba(255,255,255,.18);color:#fff;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;font-size:18px}
+.brands-ctrl:hover:not(:disabled){background:#fff;color:var(--navy-000);border-color:#fff}
+.brands-ctrl:disabled{opacity:.3;cursor:not-allowed}
+.brands-ctrl+.brands-ctrl{border-left:none}
+.brands-carousel-viewport{overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.brands-carousel-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+.brands-carousel-track::-webkit-scrollbar{display:none}
+.brand-slide{flex:0 0 33.3333%;scroll-snap-align:start;display:flex;align-items:center;justify-content:center;padding:80px 32px;height:380px;border-right:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);position:relative}
+.brand-slide:last-child{border-right:none}
+.brand-slide::before{content:'';position:absolute;top:0;left:0;width:32px;height:2px;background:var(--red);transition:width .3s}
+.brand-slide:hover::before{width:100%}
+.brand-slide img{max-height:220px;max-width:90%;width:auto;opacity:.8;transition:opacity .2s,transform .3s;filter:brightness(0) invert(1)}
+.brand-slide:hover img{opacity:1;transform:scale(1.04)}
+.brands-carousel-dots{display:flex;justify-content:center;gap:10px;margin-top:24px}
+.brand-dot{width:28px;height:3px;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:background .15s;padding:0}
+.brand-dot.active{background:var(--red)}
+.brands-cta{position:relative;z-index:1;margin-top:48px;text-align:center}
+.btn-ghost-dark{display:inline-flex;align-items:center;gap:10px;color:#fff;padding:14px 24px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,.2);transition:all .15s}
+.btn-ghost-dark:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.4)}
+
+.cta-final{padding:0}
+.cta-box{background:var(--navy-000);color:#fff;padding:88px 0;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.4) 100%);pointer-events:none;z-index:1}
+.cta-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center}
+.cta-box .section-num{color:var(--red);font-weight:700;font-size:inherit;letter-spacing:inherit;margin-right:0}
+.section-label{display:inline;font-size:inherit;font-weight:700;color:var(--red);letter-spacing:inherit;text-transform:none;margin-right:0}
+.section-label::after{content:' — ';color:var(--ink-4);font-weight:400;letter-spacing:0;text-transform:none}
+.eyebrow{color:var(--red)}
+.cta-box h2{font-size:clamp(28px,3.2vw,42px);font-weight:700;line-height:1.08;letter-spacing:-.025em;color:#fff;margin-bottom:18px}
+.cta-box h2 .accent{color:var(--teal-300)}
+.cta-box p{font-size:16px;color:rgba(255,255,255,.72);line-height:1.6;max-width:460px}
+.cta-actions{display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,.1)}
+.cta-actions>*{border-bottom:1px solid rgba(255,255,255,.08)}
+.cta-actions>*:last-child{border-bottom:none}
+
+footer{background:var(--navy-000);color:rgba(255,255,255,.6);padding:64px 0 32px;font-size:13.5px;border-top:3px solid var(--red)}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding-bottom:40px;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-logo img{height:40px;width:auto;margin-bottom:20px;display:block}
+.foot-desc{max-width:300px;color:rgba(255,255,255,.5);font-size:13px;line-height:1.65}
+.foot-col h4{color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
+.foot-col a{display:block;color:rgba(255,255,255,.5);padding:5px 0;transition:color .15s}
+.foot-col a:hover{color:#fff}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,.35);flex-wrap:wrap;gap:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+
+/* Mobile carousel stepper */
+.card-stepper{display:none;justify-content:center;gap:6px;margin-top:24px;padding:0 20px}
+.card-stepper>span{width:20px;height:3px;background:var(--line);transition:background .25s ease}
+.card-stepper>span.active{background:var(--red)}
+
+@media(max-width:1024px){
+  :root{--nav-h:70px}
+  .pch{grid-template-columns:1fr}
+  .brand-slide{flex:0 0 50%;height:320px;padding:56px 32px}
+  .brand-slide img{max-height:180px}
+  .cta-inner{grid-template-columns:1fr;gap:32px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none;position:absolute;top:calc(100% + 1px);right:0;min-width:240px;background:rgba(5,16,28,.98);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;border:1px solid rgba(255,255,255,.08);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s;justify-content:flex-start}
+  nav.dd-open .nav-links{display:flex;opacity:1;visibility:visible;transform:translateY(0)}
+  .nav-links a{padding:13px 22px;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px;color:#fff}
+  .nav-links a:last-child{border-bottom:none}
+  .nav-links a.active{color:var(--teal-300)}
+  .nav-links a.active::after{display:none}
+  .nav-dd{display:inline-flex}
+}
+@media(max-width:640px){
+  :root{--nav-h:64px}
+  .container{padding:0 20px}
+  .nav-logo img{height:32px}
+  .nav-inner{padding:0 16px;gap:10px}
+  .nav-actions{gap:6px}
+  .nav-phone{background:var(--red);padding:0 12px;font-size:11px;letter-spacing:.04em;text-transform:uppercase;gap:6px;height:36px;display:inline-flex;align-items:center}
+  .nav-phone .phone-text{display:none}
+  .nav-phone::after{content:'Urgence';font-size:11px;font-weight:700;letter-spacing:.06em}
+  .nav-phone .phone-icon{width:14px;height:14px}
+  body{padding-bottom:56px}
+  .mobile-bottom{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--navy-000);border-top:1px solid rgba(255,255,255,.1);z-index:99;padding:0;height:56px}
+  .mobile-bottom a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:rgba(255,255,255,.7);font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:color .15s;padding:8px 4px}
+  .mobile-bottom a:hover{color:#fff;background:rgba(255,255,255,.04)}
+  .mobile-bottom svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  body{padding-bottom:0}
+  .btn-nav{padding:8px 12px;font-size:11px;letter-spacing:.04em}
+  .nav-dd{padding:8px 10px;font-size:11px;gap:6px}
+  .nav-dd-label{display:none}
+  /* Mobile carousels */
+  .benefits{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:0;border:none;margin:0 -20px;padding:0 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .benefits::-webkit-scrollbar{display:none}
+  .benefits>*{flex:0 0 86%;scroll-snap-align:center;border:1px solid var(--line);margin-right:12px}
+  .benefits>*:last-child{margin-right:0}
+  .card-stepper{display:flex}
+  .brands-grid{grid-template-columns:1fr}
+  .brand-slide{flex:0 0 100%;height:260px;padding:40px 24px;border-right:none}
+  .brand-slide img{max-height:160px;max-width:80%}
+  .brands-carousel-head{padding:16px}
+  .brands-ctrl{width:40px;height:40px}
+  .foot-grid{grid-template-columns:1fr}
+  .page-hero{padding:56px 0 72px}
+  .cta-box{padding:56px 0}
+  section.block,.brands-section{padding:56px 0}
+  .hero-ctas{flex-direction:column;align-items:stretch}
+  .hero-ctas>*{width:100%}
+  .section-cta{flex-direction:column;align-items:stretch}
+  .section-cta-btns{flex-direction:column}
+  .section-cta-btns>*{width:100%}
+}
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal-right{opacity:0;transform:translateX(32px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal-left.visible,.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-zoom{opacity:0;transform:scale(.92);transition:opacity .6s ease,transform .6s ease}
+.reveal-zoom.visible{opacity:1;transform:scale(1)}
+.feat-img img{transition:transform .6s cubic-bezier(.22,.61,.36,1),filter .3s ease}
+.feat-img:hover img{transform:scale(1.04);filter:saturate(1.1) contrast(1.05)}
+.btn-primary:active,.btn-dark:active,.btn-nav:active,.btn-feat:active{transform:scale(.97);transition:transform .1s}
+img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.feat-img:hover img,.svc-visual:hover,.case:hover,.channel:hover,.brand-slide:hover img{transform:scale(1.04)}
+(max-width:1024px){.feat-img{position:static!important;align-self:auto!important}}
+@media(min-width:641px){.mobile-bottom{display:none!important}body{padding-bottom:0!important}}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="adsi_homepage_design.html" class="nav-logo" aria-label="ADSI Fonti SA"><img src="logo-adsi(2).png" alt="ADSI Fonti SA"></a>
+    <div class="nav-links" id="navLinks">
+      <a href="adsi_homepage_design.html">Accueil</a>
+      <a href="adsi_telesurveilance_v2.html">Télésurveillance</a>
+      <a href="adsi_videosurveillance.html">Vidéosurveillance</a>
+      <a href="adsi_conseil_audit.html">Conseil</a>
+      <a href="adsi_partenaires.html" class="active">Partenaires</a>
+      <a href="adsi_apropos.html">À propos</a>
+      <a href="adsi_contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="tel:+41581220002" class="nav-phone" aria-label="Appeler le +41 58 122 00 02"><svg class="phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span class="phone-text">+41 58 122 00 02</span></a>
+      <a href="adsi_devis.html" class="btn-nav">Devis</a>
+      <button class="nav-dd" id="ddBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Menu"><span class="burger-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="breadcrumb reveal"><a href="adsi_homepage_design.html">Accueil</a><span class="sep">/</span><span>Devenir partenaire</span></div>
+      <h1 class="reveal d1">Installateurs, rejoignez<br><span class="accent">une centrale qui vous écoute.</span></h1>
+      <p class="page-hero-sub reveal d2">Vous cherchez une centrale de télésurveillance réactive, flexible et humaine ? ADSI Fonti accompagne les installateurs romands avec un service personnalisé et des outils pensés pour votre métier.</p>
+      <div class="hero-ctas reveal d3">
+        <a href="adsi_devis.html" class="btn-primary">Devenir partenaire</a>
+        <a href="tel:+41581220002" class="btn-outline"><span class="pulse-dot"></span>+41 58 122 00 02</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 class="section-title"><span class="section-label">Pourquoi ADSI</span>Une centrale <span class="accent">qui travaille pour vous.</span></h2>
+      <p class="section-lead">Pas une centrale qui applique son process, la vôtre. Tout est adaptable — jusqu'aux documents remis à votre client final.</p>
+    </div>
+    <div class="benefits mobile-carousel">
+      <div class="benefit with-bg bg-service reveal"><div class="benefit-n">/ 01</div><h3>Service personnalisé</h3><p>Un interlocuteur dédié qui connaît votre dossier, vos clients et votre façon de travailler. Pas de hotline anonyme.</p></div>
+      <div class="benefit with-bg bg-protocole reveal d1"><div class="benefit-n">/ 02</div><h3>Protocoles sur mesure</h3><p>Chaque client a ses règles : horaires, contacts, escalades, types d'événements. Tout est paramétrable — rien d'imposé.</p></div>
+      <div class="benefit with-bg bg-docs reveal d2"><div class="benefit-n">/ 03</div><h3>Documents à vos couleurs</h3><p>Rapports, contrats, comptes rendus d'intervention — personnalisables avec votre identité visuelle pour vos clients finaux.</p></div>
+    </div>
+    <div class="card-stepper" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+    <div class="section-cta reveal">
+      <div class="section-cta-txt">Prêt à explorer <strong>un partenariat adapté à votre métier</strong> ?</div>
+      <div class="section-cta-btns">
+        <a href="adsi_devis.html" class="btn-dark">Démarrer la discussion</a>
+        <a href="adsi_contact.html" class="btn-link">Nous contacter →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt bg-biometric">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 class="section-title"><span class="section-label">Notre offre partenaire</span>Tout ce qu'il faut pour <span class="accent">bien travailler ensemble.</span></h2>
+      <p class="section-lead">Un appui technique et opérationnel complet, du premier test d'intégration au suivi client final.</p>
+    </div>
+    <div class="pch">
+      <div class="pch-cell reveal"><div class="pch-cell-ico"></div><div class="pch-txt"><h4>Tests de fonctionnement</h4><p>Intégration, recette, validation des protocoles avant mise en service.</p></div></div>
+      <div class="pch-cell reveal d1"><div class="pch-cell-ico"></div><div class="pch-txt"><h4>Support technique dédié</h4><p>Un contact direct pour débloquer rapidement toute question de terrain.</p></div></div>
+      <div class="pch-cell reveal"><div class="pch-cell-ico"></div><div class="pch-txt"><h4>Compatibilité multi-marques</h4><p>Jablotron, Ajax, Hikvision, Risco, Paradox, Resideo — et au-delà.</p></div></div>
+      <div class="pch-cell reveal d1"><div class="pch-cell-ico"></div><div class="pch-txt"><h4>Documents personnalisables</h4><p>Modèles à votre charte graphique, livrables prêts à remettre au client.</p></div></div>
+      <div class="pch-cell reveal"><div class="pch-cell-ico"></div><div class="pch-txt"><h4>Accompagnement client</h4><p>Nous restons en retrait ou nous exposons — vous choisissez le niveau.</p></div></div>
+      <div class="pch-cell reveal d1"><div class="pch-cell-ico"></div><div class="pch-txt"><h4>Réactivité garantie</h4><p>Délais d'intégration courts, réponse rapide sur toute demande urgente.</p></div></div>
+    </div>
+    <div class="section-cta reveal">
+      <div class="section-cta-txt">Envie de découvrir <strong>les services que nous proposons à vos clients</strong> ?</div>
+      <div class="section-cta-btns">
+        <a href="adsi_telesurveilance_v2.html" class="btn-dark">Voir la télésurveillance</a>
+        <a href="adsi_devis.html" class="btn-link">Demander un devis →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="brands-section">
+  <div class="container">
+    <div class="brands-head reveal">
+      <div class="brands-lab">Compatibilité multi-marques</div>
+      <h3>Les technologies que nous intégrons.</h3>
+    </div>
+    <div class="brands-carousel reveal d1">
+      <div class="brands-carousel-head">
+        <div><span class="brands-carousel-title">// 6 marques intégrées</span><span class="brands-carousel-counter" id="brandCounter">01 / 06</span></div>
+        <div class="brands-carousel-controls">
+          <button class="brands-ctrl" id="brandPrev" aria-label="Marque précédente">←</button>
+          <button class="brands-ctrl" id="brandNext" aria-label="Marque suivante">→</button>
+        </div>
+      </div>
+      <div class="brands-carousel-viewport">
+        <div class="brands-carousel-track" id="brandTrack">
+          <div class="brand-slide"><img src="LOGO%20PARTENAIRES%20BLANC/JABLOTRON.svg" alt="Jablotron"></div>
+          <div class="brand-slide"><img src="LOGO%20PARTENAIRES%20BLANC/HIKVISION.svg" alt="Hikvision"></div>
+          <div class="brand-slide"><img src="LOGO%20PARTENAIRES%20BLANC/AJAX.svg" alt="Ajax"></div>
+          <div class="brand-slide"><img src="LOGO%20PARTENAIRES%20BLANC/RESIDEO.svg" alt="Resideo"></div>
+          <div class="brand-slide"><img src="LOGO%20PARTENAIRES%20BLANC/PARADOX.svg" alt="Paradox"></div>
+          <div class="brand-slide"><img src="LOGO%20PARTENAIRES%20BLANC/RISCO.svg" alt="Risco"></div>
+        </div>
+      </div>
+      <div class="brands-carousel-dots" id="brandDots">
+        <button class="brand-dot active" aria-label="Marque 1"></button>
+        <button class="brand-dot" aria-label="Marque 2"></button>
+        <button class="brand-dot" aria-label="Marque 3"></button>
+        <button class="brand-dot" aria-label="Marque 4"></button>
+        <button class="brand-dot" aria-label="Marque 5"></button>
+        <button class="brand-dot" aria-label="Marque 6"></button>
+      </div>
+    </div>
+    <div class="brands-cta reveal">
+      <a href="adsi_devis.html" class="btn-ghost-dark">Intégrer notre centrale avec vos équipements →</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="cta-box">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="reveal">
+          <h2><span class="section-label" style="color:#fff;opacity:.6">Passage à l'action</span>Parlons de <span class="accent">votre besoin centrale.</span></h2>
+          <p>Expliquez-nous comment vous travaillez. Nous vous proposons une mise en relation adaptée, sans engagement et à votre rythme.</p>
+        </div>
+        <div class="cta-actions reveal d2">
+          <a href="adsi_devis.html" class="btn-primary" style="padding:20px">Démarrer la discussion</a>
+          <a href="tel:+41581220002" class="btn-outline" style="padding:19px;border:none"><span class="pulse-dot"></span>+41 58 122 00 02</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div><div class="foot-logo"><img src="logo-adsi(2).png" alt="ADSI Fonti SA"></div><p class="foot-desc">Agence Digital de Surveillance et d'Innovation. Expert en sécurité privée depuis 1963 en Suisse romande.</p></div>
+      <div class="foot-col"><h4>// Services</h4><a href="adsi_telesurveilance_v2.html">Télésurveillance</a><a href="adsi_videosurveillance.html">Vidéosurveillance</a><a href="adsi_conseil_audit.html">Conseil & Audit</a><a href="adsi_partenaires.html">Partenaires</a></div>
+      <div class="foot-col"><h4>// Entreprise</h4><a href="adsi_apropos.html">À propos</a><a href="adsi_contact.html">Contact</a><a href="adsi_devis.html">Devis gratuit</a></div>
+      <div class="foot-col"><h4>// Contact</h4><a href="https://maps.google.com/?q=Route+des+Jeunes+16c+1212+Grand-Lancy" target="_blank" rel="noopener">Route des Jeunes 16c<br>1212 Grand-Lancy</a><a href="tel:+41581220002">+41 58 122 00 02</a><a href="mailto:info@adsi-fonti.ch">info@adsi-fonti.ch</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2025 ADSI Fonti SA</span><span>Mentions légales · Confidentialité</span></div>
+  </div>
+</footer>
+
+<!-- Barre inférieure mobile -->
+<div class="mobile-bottom">
+  <a href="tel:+41581220002"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>Appeler</a>
+  <a href="mailto:info@adsi-fonti.ch"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>Email</a>
+  <a href="https://maps.google.com/?q=Route+des+Jeunes+16c+1212+Grand-Lancy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Adresse</a>
+</div>
+
+<script>
+const nav=document.getElementById('mainNav');
+const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>0);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+const ddBtn=document.getElementById('ddBtn');
+ddBtn?.addEventListener('click',e=>{e.stopPropagation();const open=nav.classList.toggle('dd-open');ddBtn.setAttribute('aria-expanded',open)});
+document.addEventListener('click',e=>{if(!e.target.closest('nav')){nav.classList.remove('dd-open');ddBtn?.setAttribute('aria-expanded','false')}});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('dd-open');ddBtn?.setAttribute('aria-expanded','false')}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){nav.classList.remove('dd-open');ddBtn?.setAttribute('aria-expanded','false')}});
+const rio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');rio.unobserve(e.target)}}),{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-zoom,.reveal-scale').forEach(el=>rio.observe(el));
+document.querySelectorAll('.mobile-carousel').forEach(grid=>{
+  const stepper=grid.nextElementSibling;
+  if(!stepper||!stepper.classList.contains('card-stepper'))return;
+  const cards=Array.from(grid.children);
+  const dots=Array.from(stepper.children);
+  let raf;
+  grid.addEventListener('scroll',()=>{
+    cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(()=>{
+      const center=grid.scrollLeft+grid.clientWidth/2;
+      let idx=0,best=Infinity;
+      cards.forEach((c,i)=>{const cc=c.offsetLeft+c.offsetWidth/2;const d=Math.abs(cc-center);if(d<best){best=d;idx=i}});
+      dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+    });
+  },{passive:true});
+  dots.forEach((d,i)=>d.addEventListener('click',()=>{cards[i]?.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})}));
+});
+
+/* Carrousel marques */
+const bTrack=document.getElementById('brandTrack');
+if(bTrack){
+  const bSlides=bTrack.querySelectorAll('.brand-slide');
+  const bDots=document.querySelectorAll('#brandDots .brand-dot');
+  const bPrev=document.getElementById('brandPrev');
+  const bNext=document.getElementById('brandNext');
+  const bCounter=document.getElementById('brandCounter');
+  const pad=(n)=>String(n).padStart(2,'0');
+  let bCurrent=0;
+  function bGoTo(i){
+    i=Math.max(0,Math.min(bSlides.length-1,i));bCurrent=i;
+    bTrack.scrollTo({left:bSlides[i].offsetLeft-bTrack.offsetLeft,behavior:'smooth'});
+    bDots.forEach((d,j)=>d.classList.toggle('active',j===i));
+    bPrev.disabled=i===0;bNext.disabled=i===bSlides.length-1;
+    if(bCounter)bCounter.textContent=`${pad(i+1)} / ${pad(bSlides.length)}`;
+  }
+  bPrev.addEventListener('click',()=>bGoTo(bCurrent-1));
+  bNext.addEventListener('click',()=>bGoTo(bCurrent+1));
+  bDots.forEach((d,i)=>d.addEventListener('click',()=>bGoTo(i)));
+  let bSt;
+  bTrack.addEventListener('scroll',()=>{clearTimeout(bSt);bSt=setTimeout(()=>{
+    const center=bTrack.scrollLeft+bTrack.clientWidth/2;
+    let idx=0,best=Infinity;
+    bSlides.forEach((s,i)=>{const cc=s.offsetLeft+s.offsetWidth/2;const d=Math.abs(cc-center);if(d<best){best=d;idx=i}});
+    if(idx!==bCurrent&&idx>=0&&idx<bSlides.length){
+      bCurrent=idx;
+      bDots.forEach((d,j)=>d.classList.toggle('active',j===idx));
+      bPrev.disabled=idx===0;bNext.disabled=idx===bSlides.length-1;
+      if(bCounter)bCounter.textContent=`${pad(idx+1)} / ${pad(bSlides.length)}`;
+    }
+  },60)});
+  bGoTo(0);
+  let bAuto=setInterval(()=>bGoTo(bCurrent+1>=bSlides.length?0:bCurrent+1),3000);
+  bTrack.addEventListener('mouseenter',()=>clearInterval(bAuto));
+  bTrack.addEventListener('mouseleave',()=>{bAuto=setInterval(()=>bGoTo(bCurrent+1>=bSlides.length?0:bCurrent+1),3000)});
+  bTrack.addEventListener('touchstart',()=>clearInterval(bAuto),{passive:true});
+  bTrack.addEventListener('touchend',()=>{bAuto=setInterval(()=>bGoTo(bCurrent+1>=bSlides.length?0:bCurrent+1),3000)},{passive:true});
+}
+</script>
+</body>
+</html>

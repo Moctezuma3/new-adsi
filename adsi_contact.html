@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — ADSI Fonti SA</title>
+<meta name="description" content="Contactez ADSI Fonti SA — téléphone, email, visite sur site. Réponse sous 24 h en Suisse romande.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy-000:#05101C;--navy-100:#0A1A2A;--navy-200:#0F2235;--navy-300:#152B40;--teal-700:#14564F;--teal-500:#1F7A6F;--teal-300:#6BBAA5;--red:#D12127;--ink:#0B1420;--ink-2:#1A2332;--ink-3:#3A4555;--ink-4:#5A6575;--ink-5:#8591A0;--line:#E2E6EA;--line-2:#EEF1F3;--paper:#F5F7F9;--sans:'Inter',sans-serif;--max:1240px;--nav-h:76px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:overlay}
+body{font-family:var(--sans);background:#fff;color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:var(--nav-h);overflow-x:hidden}
+.reveal{opacity:0;transform:translateY(20px);filter:blur(6px);transition:opacity .8s cubic-bezier(.32,.72,0,1),transform .8s cubic-bezier(.32,.72,0,1),filter .8s cubic-bezier(.32,.72,0,1)}
+.reveal.visible{opacity:1;transform:translateY(0);filter:blur(0)}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:var(--max);margin:0 auto;padding:0 32px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse-red{0%,100%{box-shadow:0 0 0 0 rgba(209,33,39,.5)}50%{box-shadow:0 0 0 6px rgba(209,33,39,0)}}
+@keyframes pulse-green{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}50%{box-shadow:0 0 0 5px rgba(34,197,94,0)}}
+.pulse-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse-red 2s infinite;display:inline-block;flex-shrink:0}
+.anim-1{animation:fadeUp .5s .05s ease both}.anim-2{animation:fadeUp .5s .15s ease both}.anim-3{animation:fadeUp .5s .25s ease both}
+
+/* NAV — opaque at top, glass on scroll */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy-000);transition:background .3s ease;border-bottom:1px solid transparent;height:var(--nav-h);display:flex;align-items:center}
+nav.scrolled{background:rgba(5,16,28,.72);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);border-bottom-color:rgba(255,255,255,.08)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 32px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo{flex-shrink:0;z-index:101;display:flex;align-items:center}.nav-logo img{height:40px;width:auto;display:block}
+.nav-dd{display:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:#fff;padding:10px 16px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;align-items:center;gap:8px;transition:all .15s;font-family:inherit}
+.nav-dd:hover{background:rgba(255,255,255,.1)}
+.nav-dd .chev{width:10px;height:10px;transition:transform .25s ease;flex-shrink:0}
+nav.dd-open .nav-dd .chev{transform:rotate(180deg)}
+.nav-links{display:flex;align-items:center;gap:28px;flex:1;justify-content:center}
+.nav-links a{color:rgba(255,255,255,.75);font-size:13.5px;font-weight:500;transition:color .15s;white-space:nowrap}
+.nav-links a:hover{color:#fff}.nav-links a.active{color:#fff;font-weight:600}
+.nav-links a.active::after{content:'';display:block;width:100%;height:2px;background:var(--red);margin-top:4px}
+.nav-actions{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.nav-phone{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:600;font-size:13px;white-space:nowrap;font-feature-settings:'tnum' 1;transition:color .15s}
+.nav-phone:hover{color:var(--teal-300)}
+.nav-phone .phone-icon{width:16px;height:16px;flex-shrink:0}
+.nav-dd .burger-icon{display:inline-flex;flex-direction:column;gap:4px;width:18px;height:14px;justify-content:center;align-items:stretch}
+.nav-dd .burger-icon span{display:block;height:2px;width:100%;background:currentColor;transition:transform .28s cubic-bezier(.4,0,.2,1),opacity .2s ease}
+nav.dd-open .nav-dd .burger-icon span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+nav.dd-open .nav-dd .burger-icon span:nth-child(2){opacity:0}
+nav.dd-open .nav-dd .burger-icon span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.btn-nav{background:var(--red);color:#fff!important;padding:10px 18px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .15s;white-space:nowrap}
+.btn-nav:hover{background:#a81a1f}
+
+/* HERO */
+.page-hero{position:relative;color:#fff;padding:88px 0 112px;overflow:hidden;border-bottom:3px solid var(--red);background:linear-gradient(rgba(5,16,28,.58),rgba(5,16,28,.75)),url('BANNIERES/PAGE%20CONTACT.jpg') center/cover no-repeat,var(--navy-000)}
+/* Hover effects */
+.channel,.info-row,.urg-phone{transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease,background .2s ease}
+.channel:hover{transform:translateY(-4px);box-shadow:0 16px 32px -12px rgba(15,23,42,.15)}
+
+/* Section backgrounds */
+.info-section.bg-control,.map-section.bg-patrol{position:relative;isolation:isolate}
+.info-section.bg-control::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(245,247,249,.86),rgba(245,247,249,.92)),url('PICTURES/001.jpg') center/cover no-repeat;z-index:-1}
+.map-section.bg-patrol::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.92)),url('PICTURES/background_56281909.jpg') center/cover no-repeat;z-index:-1}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.4) 100%);pointer-events:none;z-index:1}
+.page-hero-inner{position:relative;z-index:2;max-width:760px}
+.breadcrumb{font-size:11.5px;color:rgba(255,255,255,.5);margin-bottom:28px;display:flex;align-items:center;gap:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.breadcrumb a{color:rgba(255,255,255,.5);transition:color .15s}.breadcrumb a:hover{color:#fff}
+.breadcrumb .sep{opacity:.4}
+.page-hero h1{font-size:clamp(38px,5vw,58px);font-weight:700;line-height:1.05;letter-spacing:-.03em;margin-bottom:22px}
+.page-hero h1 .accent{color:var(--teal-300)}
+.page-hero-sub{font-size:18px;line-height:1.6;color:rgba(255,255,255,.72);max-width:600px}
+
+/* CHANNELS */
+.channels{margin-top:-40px;position:relative;z-index:10;padding-bottom:96px;background:#fff}
+.channels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line)}
+.channel{padding:36px 32px;background:#fff;border-right:1px solid var(--line);transition:background .15s;position:relative;display:flex;flex-direction:column}
+.channel:last-child{border-right:none}
+.channel:hover{background:var(--paper)}
+.channel::before{content:'';position:absolute;top:0;left:0;width:40px;height:3px;background:var(--red)}
+.channel-n{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.12em;margin-bottom:16px;text-transform:uppercase}
+.channel h3{font-size:19px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+.channel p{font-size:14px;color:var(--ink-4);line-height:1.6;margin-bottom:20px;flex:1}
+.channel-val{font-size:14px;font-weight:700;color:var(--navy-100);letter-spacing:.01em;display:flex;align-items:center;gap:8px;padding-top:16px;border-top:1px solid var(--line-2);font-feature-settings:'tnum' 1}
+.channel-val .arrow{color:var(--red);font-size:16px;transition:transform .2s}
+.channel:hover .channel-val .arrow{transform:translateX(4px)}
+.channel-meta{font-size:11px;color:var(--ink-5);letter-spacing:.06em;margin-top:6px;text-transform:uppercase;font-weight:600}
+
+section.block{padding:112px 0}
+section.block.alt{background:var(--paper)}
+.section-num{color:var(--red);font-weight:700;font-size:inherit;letter-spacing:inherit;margin-right:0}
+.section-label{display:inline;font-size:inherit;font-weight:700;color:var(--red);letter-spacing:inherit;text-transform:none;margin-right:0}
+.section-label::after{content:' — ';color:var(--ink-4);font-weight:400;letter-spacing:0;text-transform:none}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11.5px;font-weight:700;color:var(--red);letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--red)}
+.section-head{max-width:720px;margin-bottom:56px}
+
+.section-cta{margin-top:56px;padding-top:32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.section-cta-txt{font-size:14.5px;font-weight:500;color:var(--ink-3);flex:1;min-width:240px}
+.section-cta-txt strong{color:var(--ink);font-weight:700}
+.section-cta-btns{display:flex;gap:0;align-items:stretch}
+.btn-dark{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:13px 22px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .15s}
+.btn-dark:hover{background:var(--red)}
+.btn-link{display:inline-flex;align-items:center;gap:8px;color:var(--teal-500);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:13px 18px;border-bottom:2px solid transparent;transition:border-color .15s}
+.btn-link:hover{border-color:var(--teal-500)}
+
+/* INFO + URGENCE */
+.info-section{padding:112px 0;background:var(--paper)}
+.info-split{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:stretch}
+.info-card{background:#fff;border:1px solid var(--line);padding:40px}
+.info-card h2{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.info-lead{font-size:15px;color:var(--ink-4);line-height:1.6;margin-bottom:28px}
+.info-row{display:grid;grid-template-columns:40px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line)}
+.info-row:first-of-type{border-top:none;padding-top:0}
+.info-n{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.08em;padding-top:3px;text-transform:uppercase}
+.info-label{font-size:11px;font-weight:700;color:var(--ink-5);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.info-value{font-size:15px;color:var(--ink-2);font-weight:600;line-height:1.55}
+.info-value a:hover{color:var(--red)}
+.info-meta{font-size:12px;color:var(--ink-5);margin-top:4px;letter-spacing:.04em;font-weight:500}
+
+.urg{background:var(--navy-000);color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column;padding:40px}
+.urg::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--red)}
+.urg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,.25) 100%);pointer-events:none}
+.urg-pill{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:5px 10px;background:rgba(209,33,39,.15);border:1px solid rgba(209,33,39,.4);font-size:10.5px;font-weight:700;color:#fca5a5;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px;position:relative;z-index:1}
+.urg h3{font-size:22px;font-weight:700;line-height:1.2;margin-bottom:14px;position:relative;z-index:1}
+.urg p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:28px;position:relative;z-index:1}
+.urg-phone{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;padding:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);transition:background .15s;position:relative;z-index:1;margin-bottom:16px}
+.urg-phone:hover{background:rgba(255,255,255,.1)}
+.urg-phone-badge{background:var(--red);color:#fff;padding:10px 14px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.urg-phone-num{font-size:22px;font-weight:700;color:#fff;letter-spacing:-.01em;font-feature-settings:'tnum' 1}
+.urg-phone-lab{font-size:11px;color:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase;margin-top:3px;font-weight:600}
+.urg-live{font-size:11px;color:#86efac;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:12px;position:relative;z-index:1;font-weight:600}
+.urg-live .pulse-dot{background:#22c55e;animation-name:pulse-green}
+
+/* MAP */
+.map-section{padding:96px 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.map-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.map-text h3{font-size:26px;font-weight:700;letter-spacing:-.02em;margin-bottom:14px}
+.map-text p{font-size:15px;color:var(--ink-4);line-height:1.65;margin-bottom:24px}
+.cantons{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);margin-bottom:28px}
+.canton{font-size:12px;font-weight:700;color:var(--navy-100);padding:10px 16px;background:var(--paper);border-right:1px solid var(--line);letter-spacing:.06em;text-transform:uppercase}
+.canton:last-child{border-right:none}
+.map-text .section-cta{margin-top:0;padding-top:24px}
+.map-visual{aspect-ratio:4/3;background:var(--navy-000);border:1px solid var(--navy-300);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.map-visual::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
+.map-visual svg{width:85%;height:auto;position:relative;z-index:1}
+
+/* CTA DEVIS */
+.cta-devis{padding:0}
+.cta-devis-box{background:var(--navy-000);color:#fff;padding:96px 0;position:relative;overflow:hidden}
+.cta-devis-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.4) 100%);pointer-events:none;z-index:1}
+.cta-devis-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:start}
+.cta-devis-box h2{font-size:clamp(28px,3.2vw,42px);font-weight:700;line-height:1.08;letter-spacing:-.025em;color:#fff;margin-bottom:18px}
+.cta-devis-box h2 .accent{color:var(--teal-300)}
+.cta-devis-box>.container>.cta-devis-inner>div:first-child>p{font-size:16px;color:rgba(255,255,255,.72);line-height:1.6;max-width:480px;margin-bottom:28px}
+.cta-points{list-style:none;display:grid;gap:0;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02)}
+.cta-points li{display:flex;align-items:center;gap:12px;font-size:14px;color:rgba(255,255,255,.88);padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.06);font-weight:500}
+.cta-points li:last-child{border-bottom:none}
+.cta-points li::before{content:'';width:8px;height:8px;background:var(--red);flex-shrink:0}
+.cta-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:32px;position:relative;z-index:1}
+.cta-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--red)}
+.cta-card h4{font-size:11px;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:24px}
+.steps-mini{display:flex;flex-direction:column;gap:0;margin-bottom:28px;border:1px solid rgba(255,255,255,.08)}
+.step-mini{display:flex;align-items:center;gap:16px;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.06)}
+.step-mini:last-child{border-bottom:none}
+.step-mini-n{font-size:12px;font-weight:700;color:var(--red);letter-spacing:.06em;flex-shrink:0;width:32px}
+.step-mini-txt{font-size:13px;color:#fff;font-weight:500;line-height:1.4}
+.step-mini-txt small{display:block;color:rgba(255,255,255,.55);font-size:11px;font-weight:500;margin-top:2px;letter-spacing:.02em}
+.btn-devis-big{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--red);color:#fff;padding:18px;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .15s}
+.btn-devis-big:hover{background:#a81a1f}
+.cta-devis-time{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.cta-devis-time .pulse-dot{background:#22c55e;animation-name:pulse-green}
+
+footer{background:var(--navy-000);color:rgba(255,255,255,.6);padding:64px 0 32px;font-size:13.5px;border-top:3px solid var(--red)}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding-bottom:40px;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-logo img{height:40px;width:auto;margin-bottom:20px;display:block}
+.foot-desc{max-width:300px;color:rgba(255,255,255,.5);font-size:13px;line-height:1.65}
+.foot-col h4{color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
+.foot-col a{display:block;color:rgba(255,255,255,.5);padding:5px 0;transition:color .15s}
+.foot-col a:hover{color:#fff}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,.35);flex-wrap:wrap;gap:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+
+/* Mobile carousel stepper */
+.card-stepper{display:none;justify-content:center;gap:6px;margin-top:24px;padding:0 20px}
+.card-stepper>span{width:20px;height:3px;background:var(--line);transition:background .25s ease}
+.card-stepper>span.active{background:var(--red)}
+
+@media(max-width:1024px){
+  .channels-grid{grid-template-columns:1fr}
+  .channel{border-right:none;border-bottom:1px solid var(--line)}
+  .info-split{grid-template-columns:1fr}
+  .map-split{grid-template-columns:1fr}
+  .cta-devis-inner{grid-template-columns:1fr;gap:32px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  :root{--nav-h:70px}
+  .nav-links{display:none;position:absolute;top:calc(100% + 1px);right:0;min-width:240px;background:rgba(5,16,28,.98);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;border:1px solid rgba(255,255,255,.08);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s;justify-content:flex-start}
+  nav.dd-open .nav-links{display:flex;opacity:1;visibility:visible;transform:translateY(0)}
+  .nav-links a{padding:13px 22px;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px;color:#fff}
+  .nav-links a:last-child{border-bottom:none}
+  .nav-links a.active{color:var(--teal-300)}
+  .nav-links a.active::after{display:none}
+  .nav-dd{display:inline-flex}
+}
+@media(max-width:640px){
+  :root{--nav-h:64px}
+  .container{padding:0 20px}
+  .nav-logo img{height:32px}
+  .nav-inner{padding:0 16px;gap:10px}
+  .nav-actions{gap:6px}
+  .nav-phone{background:var(--red);padding:0 12px;font-size:11px;letter-spacing:.04em;text-transform:uppercase;gap:6px;height:36px;display:inline-flex;align-items:center}
+  .nav-phone .phone-text{display:none}
+  .nav-phone::after{content:'Urgence';font-size:11px;font-weight:700;letter-spacing:.06em}
+  .nav-phone .phone-icon{width:14px;height:14px}
+  body{padding-bottom:56px}
+  .mobile-bottom{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--navy-000);border-top:1px solid rgba(255,255,255,.1);z-index:99;padding:0;height:56px}
+  .mobile-bottom a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:rgba(255,255,255,.7);font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:color .15s;padding:8px 4px}
+  .mobile-bottom a:hover{color:#fff;background:rgba(255,255,255,.04)}
+  .mobile-bottom svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  body{padding-bottom:0}
+  .btn-nav{padding:8px 12px;font-size:11px;letter-spacing:.04em}
+  .nav-dd{padding:8px 10px;font-size:11px;gap:6px}
+  .nav-dd-label{display:none}
+  /* Channels mobile carousel */
+  .channels-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:0;border:none;margin:0 -20px;padding:0 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .channels-grid::-webkit-scrollbar{display:none}
+  .channels-grid>*{flex:0 0 86%;scroll-snap-align:center;border:1px solid var(--line);border-bottom:1px solid var(--line);margin-right:12px}
+  .channels-grid>*:last-child{margin-right:0}
+  .card-stepper{display:flex}
+  .foot-grid{grid-template-columns:1fr}
+  .page-hero{padding:64px 0 100px}
+  .channels{margin-top:-24px;padding-bottom:64px}
+  .info-section,.map-section{padding:72px 0}
+  .cta-devis-box{padding:64px 0}
+  .info-card,.urg{padding:28px}
+  .section-cta{flex-direction:column;align-items:stretch}
+  .section-cta-btns{flex-direction:column}
+}
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal-right{opacity:0;transform:translateX(32px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal-left.visible,.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-zoom{opacity:0;transform:scale(.92);transition:opacity .6s ease,transform .6s ease}
+.reveal-zoom.visible{opacity:1;transform:scale(1)}
+.feat-img img{transition:transform .6s cubic-bezier(.22,.61,.36,1),filter .3s ease}
+.feat-img:hover img{transform:scale(1.04);filter:saturate(1.1) contrast(1.05)}
+.btn-primary:active,.btn-dark:active,.btn-nav:active,.btn-feat:active{transform:scale(.97);transition:transform .1s}
+img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.feat-img:hover img,.svc-visual:hover,.case:hover,.channel:hover,.brand-slide:hover img{transform:scale(1.04)}
+(max-width:1024px){.feat-img{position:static!important;align-self:auto!important}}
+@media(min-width:641px){.mobile-bottom{display:none!important}body{padding-bottom:0!important}}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="adsi_homepage_design.html" class="nav-logo" aria-label="ADSI Fonti SA"><img src="logo-adsi(2).png" alt="ADSI Fonti SA"></a>
+    <div class="nav-links" id="navLinks">
+      <a href="adsi_homepage_design.html">Accueil</a>
+      <a href="adsi_telesurveilance_v2.html">Télésurveillance</a>
+      <a href="adsi_videosurveillance.html">Vidéosurveillance</a>
+      <a href="adsi_conseil_audit.html">Conseil</a>
+      <a href="adsi_partenaires.html">Partenaires</a>
+      <a href="adsi_apropos.html">À propos</a>
+      <a href="adsi_contact.html" class="active">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="tel:+41581220002" class="nav-phone" aria-label="Appeler le +41 58 122 00 02"><svg class="phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span class="phone-text">+41 58 122 00 02</span></a>
+      <a href="adsi_devis.html" class="btn-nav">Devis</a>
+      <button class="nav-dd" id="ddBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Menu"><span class="burger-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="breadcrumb anim-1"><a href="adsi_homepage_design.html">Accueil</a><span class="sep">/</span><span>Contact</span></div>
+      <h1 class="anim-2">Parlons de votre <span class="accent">sécurité.</span></h1>
+      <p class="page-hero-sub anim-3">Téléphone, email, visite sur site — choisissez le canal qui vous convient. Un expert ADSI vous recontacte rapidement pour qualifier votre besoin.</p>
+    </div>
+  </div>
+</section>
+
+<section class="channels">
+  <div class="container">
+    <div class="channels-grid mobile-carousel">
+      <a href="tel:+41581220002" class="channel">
+        <div class="channel-n">/ 01 — Téléphone</div>
+        <h3>Nous appeler</h3>
+        <p>Le plus rapide pour échanger sur votre besoin et planifier un audit gratuit sur site.</p>
+        <span class="channel-val">+41 58 122 00 02 <span class="arrow">→</span></span>
+        <span class="channel-meta">Lun–Ven · 08 h – 18 h</span>
+      </a>
+      <a href="mailto:info@adsi-fonti.ch" class="channel">
+        <div class="channel-n">/ 02 — Email</div>
+        <h3>Nous écrire</h3>
+        <p>Pour nous transmettre un dossier, des plans ou poser des questions techniques détaillées.</p>
+        <span class="channel-val">info@adsi-fonti.ch <span class="arrow">→</span></span>
+        <span class="channel-meta">Réponse sous 24 h ouvrées</span>
+      </a>
+      <a href="#adresse" class="channel">
+        <div class="channel-n">/ 03 — Sur site</div>
+        <h3>Venir nous voir</h3>
+        <p>Sur rendez-vous, à nos bureaux de Grand-Lancy, pour discuter de votre projet en face à face.</p>
+        <span class="channel-val">Route des Jeunes 16c <span class="arrow">→</span></span>
+        <span class="channel-meta">Genève · 1212 Grand-Lancy</span>
+      </a>
+    </div>
+    <div class="card-stepper" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+    <div class="section-cta">
+      <div class="section-cta-txt">Envie d'aller droit au but ? <strong>Remplissez notre formulaire de devis.</strong></div>
+      <div class="section-cta-btns">
+        <a href="adsi_devis.html" class="btn-dark">Demander un devis</a>
+        <a href="adsi_apropos.html" class="btn-link">En savoir plus sur ADSI →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info-section bg-control" id="adresse">
+  <div class="container">
+    <div class="info-split">
+      <div class="info-card">
+        <h2><span class="section-label">Coordonnées</span>Nos informations complètes.</h2>
+        <p class="info-lead">Tous les moyens de nous joindre. Pour une réponse rapide, privilégiez le téléphone pendant nos horaires d'ouverture.</p>
+        <div class="info-row"><div class="info-n">/ 01</div><div><div class="info-label">Adresse</div><div class="info-value">Route des Jeunes 16c<br>1212 Grand-Lancy, Suisse</div><div class="info-meta">Parking visiteurs · Accessible PMR</div></div></div>
+        <div class="info-row"><div class="info-n">/ 02</div><div><div class="info-label">Téléphone</div><div class="info-value"><a href="tel:+41581220002">+41 58 122 00 02</a></div><div class="info-meta">Bureaux · Lun–Ven 08 h – 18 h</div></div></div>
+        <div class="info-row"><div class="info-n">/ 03</div><div><div class="info-label">Email</div><div class="info-value"><a href="mailto:info@adsi-fonti.ch">info@adsi-fonti.ch</a></div><div class="info-meta">Réponse sous 24 h ouvrées</div></div></div>
+        <div class="info-row"><div class="info-n">/ 04</div><div><div class="info-label">Horaires bureaux</div><div class="info-value">Lundi – Vendredi · 08 h – 18 h<br>Samedi – Dimanche · sur rendez-vous</div><div class="info-meta">Centrale de télésurveillance : 24/7</div></div></div>
+      </div>
+      <div class="urg">
+        <span class="urg-pill"><span class="pulse-dot"></span>Urgence sécurité</span>
+        <h3>Besoin d'assistance immédiate ?</h3>
+        <p>Notre centrale opérationnelle est joignable 24 heures sur 24, 7 jours sur 7 — y compris les jours fériés.</p>
+        <a href="tel:+41581220001" class="urg-phone">
+          <div class="urg-phone-badge">24/7</div>
+          <div><div class="urg-phone-lab">Ligne directe</div><div class="urg-phone-num">+41 58 122 00 01</div></div>
+        </a>
+        <div class="urg-live"><span class="pulse-dot"></span>Centrale en ligne · Qualification &lt; 60 s</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="map-section bg-patrol">
+  <div class="container">
+    <div class="map-split">
+      <div class="map-text">
+        <h3><span class="section-label">Zone d'intervention</span>Présents partout en <span style="color:var(--teal-500)">Suisse romande.</span></h3>
+        <p>Notre siège est à Grand-Lancy (GE), et notre réseau de partenaires d'intervention couvre l'ensemble des cantons romands. Nous intervenons aussi sur chantiers et sites temporaires.</p>
+        <div class="cantons">
+          <span class="canton">Genève</span><span class="canton">Vaud</span><span class="canton">Valais</span><span class="canton">Fribourg</span><span class="canton">Neuchâtel</span><span class="canton">Jura</span>
+        </div>
+        <div class="section-cta">
+          <div class="section-cta-txt">Votre site est <strong>dans l'un de ces cantons</strong> ?</div>
+          <div class="section-cta-btns">
+            <a href="adsi_devis.html" class="btn-dark">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+      <div class="map-visual">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60 180 Q70 140 110 130 Q140 110 180 120 Q230 110 270 130 Q320 140 350 180 Q340 220 310 240 Q280 250 240 245 Q200 255 160 250 Q110 255 80 240 Q55 220 60 180 Z" fill="none" stroke="rgba(107,186,165,.4)" stroke-width="1" stroke-dasharray="4 4"/>
+          <path d="M60 180 Q70 140 110 130 Q140 110 180 120 Q230 110 270 130 Q320 140 350 180 Q340 220 310 240 Q280 250 240 245 Q200 255 160 250 Q110 255 80 240 Q55 220 60 180 Z" fill="rgba(107,186,165,.05)"/>
+          <circle cx="130" cy="200" r="3" fill="#6BBAA5"/><text x="140" y="205" font-size="10" fill="rgba(255,255,255,.8)" font-family="Inter" font-weight="600">GE</text>
+          <circle cx="180" cy="170" r="3" fill="#6BBAA5"/><text x="190" y="175" font-size="10" fill="rgba(255,255,255,.8)" font-family="Inter" font-weight="600">VD</text>
+          <circle cx="250" cy="200" r="3" fill="#6BBAA5"/><text x="260" y="205" font-size="10" fill="rgba(255,255,255,.8)" font-family="Inter" font-weight="600">VS</text>
+          <circle cx="230" cy="155" r="3" fill="#6BBAA5"/><text x="240" y="160" font-size="10" fill="rgba(255,255,255,.8)" font-family="Inter" font-weight="600">FR</text>
+          <circle cx="190" cy="135" r="3" fill="#6BBAA5"/><text x="200" y="140" font-size="10" fill="rgba(255,255,255,.8)" font-family="Inter" font-weight="600">NE</text>
+          <circle cx="150" cy="140" r="3" fill="#6BBAA5"/><text x="160" y="145" font-size="10" fill="rgba(255,255,255,.8)" font-family="Inter" font-weight="600">JU</text>
+          <rect x="120" y="200" width="10" height="10" fill="#D12127"/>
+          <text x="70" y="232" font-size="9" fill="#D12127" font-family="Inter" font-weight="700" letter-spacing="1">// SIÈGE</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-devis">
+  <div class="cta-devis-box">
+    <div class="container">
+      <div class="cta-devis-inner">
+        <div>
+          <h2><span class="section-label">Demande de devis</span>Préférez-vous un <span class="accent">formulaire structuré ?</span></h2>
+          <p>Plutôt que de rédiger un email, utilisez notre formulaire de devis. En 5 minutes, vous nous transmettez tout ce qu'il faut pour préparer une proposition pertinente.</p>
+          <ul class="cta-points">
+            <li>Rappel sous 24 heures</li>
+            <li>Audit sur site gratuit · déplacement offert</li>
+            <li>Chiffrage transparent sous 5 jours</li>
+            <li>Aucun engagement de votre part</li>
+          </ul>
+        </div>
+        <div class="cta-card">
+          <h4>// Le formulaire en 4 étapes</h4>
+          <div class="steps-mini">
+            <div class="step-mini"><div class="step-mini-n">01</div><div class="step-mini-txt">Votre profil<small>Particulier, entreprise ou immobilier</small></div></div>
+            <div class="step-mini"><div class="step-mini-n">02</div><div class="step-mini-txt">Vos besoins<small>Télésurveillance, vidéo, conseil…</small></div></div>
+            <div class="step-mini"><div class="step-mini-n">03</div><div class="step-mini-txt">Votre projet<small>Lieu, surface, délai, contexte</small></div></div>
+            <div class="step-mini"><div class="step-mini-n">04</div><div class="step-mini-txt">Vos coordonnées<small>Pour vous recontacter</small></div></div>
+          </div>
+          <a href="adsi_devis.html" class="btn-devis-big">Démarrer ma demande →</a>
+          <div class="cta-devis-time"><span class="pulse-dot"></span>5 minutes · Données confidentielles</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><img src="logo-adsi(2).png" alt="ADSI Fonti SA"></div>
+        <p class="foot-desc">Agence Digital de Surveillance et d'Innovation. Expert en sécurité privée depuis 1963 en Suisse romande.</p>
+      </div>
+      <div class="foot-col"><h4>// Services</h4>
+        <a href="adsi_telesurveilance_v2.html">Télésurveillance</a>
+        <a href="adsi_videosurveillance.html">Vidéosurveillance</a>
+        <a href="adsi_conseil_audit.html">Conseil & Audit</a>
+        <a href="adsi_partenaires.html">Partenaires</a>
+      </div>
+      <div class="foot-col"><h4>// Entreprise</h4>
+        <a href="adsi_apropos.html">À propos</a>
+        <a href="adsi_contact.html">Contact</a>
+        <a href="adsi_devis.html">Devis gratuit</a>
+      </div>
+      <div class="foot-col"><h4>// Contact</h4>
+        <a href="https://maps.google.com/?q=Route+des+Jeunes+16c+1212+Grand-Lancy" target="_blank" rel="noopener">Route des Jeunes 16c<br>1212 Grand-Lancy</a>
+        <a href="tel:+41581220002">+41 58 122 00 02</a>
+        <a href="mailto:info@adsi-fonti.ch">info@adsi-fonti.ch</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 ADSI Fonti SA</span>
+      <span>Mentions légales · Confidentialité</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Barre inférieure mobile -->
+<div class="mobile-bottom">
+  <a href="tel:+41581220002"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>Appeler</a>
+  <a href="mailto:info@adsi-fonti.ch"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>Email</a>
+  <a href="https://maps.google.com/?q=Route+des+Jeunes+16c+1212+Grand-Lancy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Adresse</a>
+</div>
+
+<script>
+const nav=document.getElementById('mainNav');
+const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>0);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+const ddBtn=document.getElementById('ddBtn');
+ddBtn?.addEventListener('click',e=>{e.stopPropagation();const open=nav.classList.toggle('dd-open');ddBtn.setAttribute('aria-expanded',open)});
+document.addEventListener('click',e=>{if(!e.target.closest('nav')){nav.classList.remove('dd-open');ddBtn?.setAttribute('aria-expanded','false')}});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('dd-open');ddBtn?.setAttribute('aria-expanded','false')}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){nav.classList.remove('dd-open');ddBtn?.setAttribute('aria-expanded','false')}});
+const rio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');rio.unobserve(e.target)}}),{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-zoom,.reveal-scale').forEach(el=>rio.observe(el));
+document.querySelectorAll('.mobile-carousel').forEach(grid=>{
+  const stepper=grid.nextElementSibling;
+  if(!stepper||!stepper.classList.contains('card-stepper'))return;
+  const cards=Array.from(grid.children);const dots=Array.from(stepper.children);let raf;
+  grid.addEventListener('scroll',()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{const center=grid.scrollLeft+grid.clientWidth/2;let idx=0,best=Infinity;cards.forEach((c,i)=>{const cc=c.offsetLeft+c.offsetWidth/2;const d=Math.abs(cc-center);if(d<best){best=d;idx=i}});dots.forEach((d,i)=>d.classList.toggle('active',i===idx))})},{passive:true});
+  dots.forEach((d,i)=>d.addEventListener('click',()=>{cards[i]?.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})}));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demander un devis — ADSI Fonti SA</title>
+<meta name="description" content="Obtenez un devis gratuit et personnalisé pour votre projet de sécurité. Réponse sous 24 h, sans engagement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy-000:#05101C;--navy-100:#0A1A2A;--navy-200:#0F2235;--navy-300:#152B40;--teal-500:#1F7A6F;--teal-300:#6BBAA5;--red:#D12127;--red-dim:#FEE2E2;--ink:#0B1420;--ink-2:#1A2332;--ink-3:#3A4555;--ink-4:#5A6575;--ink-5:#8591A0;--line:#E2E6EA;--line-2:#EEF1F3;--paper:#F5F7F9;--sans:'Inter',sans-serif;--max:1240px;--nav-h:76px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;padding-top:var(--nav-h);background:linear-gradient(rgba(245,247,249,.88),rgba(245,247,249,.94)),url('PICTURES/background_56281909.jpg') center/cover fixed no-repeat,var(--paper)}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:var(--max);margin:0 auto;padding:0 32px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse-red{0%,100%{box-shadow:0 0 0 0 rgba(209,33,39,.5)}50%{box-shadow:0 0 0 6px rgba(209,33,39,0)}}
+@keyframes pulse-green{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}50%{box-shadow:0 0 0 5px rgba(34,197,94,0)}}
+.pulse-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse-red 2s infinite;display:inline-block;flex-shrink:0}
+
+/* NAV — identique toutes pages */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy-000);transition:background .3s ease;border-bottom:1px solid transparent;height:var(--nav-h);display:flex;align-items:center}
+nav.scrolled{background:rgba(5,16,28,.72);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);border-bottom-color:rgba(255,255,255,.08)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 32px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative}
+.nav-logo{flex-shrink:0;z-index:101;display:flex;align-items:center}
+.nav-logo img{height:40px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:28px;flex:1;justify-content:center}
+.nav-links a{color:rgba(255,255,255,.78);font-size:13.5px;font-weight:500;transition:color .15s;white-space:nowrap;position:relative}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:#fff;font-weight:600}
+.nav-links a.active::after{content:'';display:block;position:absolute;bottom:-8px;left:0;right:0;height:2px;background:var(--red)}
+.nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.nav-phone{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:600;font-size:13px;white-space:nowrap;font-feature-settings:'tnum' 1;transition:color .15s}
+.nav-phone:hover{color:var(--teal-300)}
+.nav-phone .phone-icon{width:16px;height:16px;flex-shrink:0}
+.btn-nav{background:var(--red);color:#fff!important;padding:10px 18px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .15s;white-space:nowrap}
+.btn-nav:hover{background:#a81a1f}
+.nav-dd{display:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:#fff;padding:10px 18px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;align-items:center;gap:8px;transition:all .15s;font-family:inherit}
+.nav-dd:hover{background:rgba(255,255,255,.1)}
+.nav-dd .burger-icon{display:inline-flex;flex-direction:column;gap:4px;width:18px;height:14px;justify-content:center;align-items:stretch}
+.nav-dd .burger-icon span{display:block;height:2px;width:100%;background:currentColor;transition:transform .28s cubic-bezier(.4,0,.2,1),opacity .2s ease}
+nav.dd-open .nav-dd .burger-icon span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+nav.dd-open .nav-dd .burger-icon span:nth-child(2){opacity:0}
+nav.dd-open .nav-dd .burger-icon span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* LAYOUT — formulaire immédiatement visible */
+.dev-layout{display:grid;grid-template-columns:1fr 320px;gap:32px;max-width:1100px;margin:24px auto;padding:0 32px;align-items:start}
+
+/* PROGRESS intégré dans form-card */
+.prog-section{padding-bottom:24px;margin-bottom:24px;border-bottom:1px solid var(--line)}
+.prog-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.prog-title{font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.prog-pills{font-size:11.5px;font-weight:600;color:var(--ink-5);letter-spacing:.04em;text-transform:uppercase}
+.prog-bar{position:relative;height:2px;background:var(--line);margin-bottom:16px;overflow:hidden}
+.prog-fill{position:absolute;top:0;left:0;bottom:0;background:var(--red);transition:width .4s cubic-bezier(.4,0,.2,1)}
+.prog-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.prog-step{display:flex;flex-direction:column;align-items:flex-start;font-size:11px;color:var(--ink-5);font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+.prog-step .num{width:24px;height:24px;background:var(--line);color:var(--ink-5);font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-bottom:8px;transition:background .3s,color .3s}
+.prog-step.active .num{background:var(--red);color:#fff}
+.prog-step.done .num{background:var(--navy-100);color:#fff}
+.prog-step.active .label{color:var(--ink);font-weight:700}
+.prog-step.done .label{color:var(--ink-3)}
+
+/* FORM CARD */
+.form-card{background:#fff;border:1px solid var(--line);padding:32px 36px}
+.step{display:none;animation:fadeUp .35s ease both}
+.step.active{display:block}
+.step-title{font-size:22px;font-weight:700;margin-bottom:6px;letter-spacing:-.015em}
+.step-sub{font-size:14px;color:var(--ink-4);margin-bottom:32px;line-height:1.6}
+
+/* FIELDS */
+.field{margin-bottom:24px}
+.field label{display:block;font-size:11px;font-weight:600;color:var(--ink-3);margin-bottom:8px;letter-spacing:.04em;text-transform:uppercase}
+.field label .req{color:var(--red);margin-left:2px}
+.field input[type=text],.field input[type=email],.field input[type=tel],.field textarea,.field select{width:100%;padding:12px 14px;border:1px solid var(--line);font-family:inherit;font-size:15px;color:var(--ink);background:#fff;transition:border-color .15s,box-shadow .15s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--red);box-shadow:inset 0 0 0 1px var(--red)}
+.field textarea{resize:vertical;min-height:100px;line-height:1.5;font-family:inherit}
+.field .hint{font-size:11px;color:var(--ink-5);margin-top:6px;letter-spacing:.02em}
+.field .error{font-size:11px;color:var(--red);margin-top:6px;display:none;letter-spacing:.02em}
+.field.has-error input,.field.has-error textarea,.field.has-error select{border-color:var(--red)}
+.field.has-error .error{display:block}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* OPTION CARDS (radios/checkboxes as cards) */
+.options{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line)}
+.option{position:relative;padding:20px 18px;cursor:pointer;border-right:1px solid var(--line);transition:background .15s;background:#fff}
+.option:last-child{border-right:none}
+.option:hover{background:var(--paper)}
+.option input{position:absolute;opacity:0;inset:0;cursor:pointer;z-index:2}
+.option-n{font-size:10.5px;font-weight:600;color:var(--red);letter-spacing:.06em;margin-bottom:14px;text-transform:uppercase}
+.option-title{font-size:14px;font-weight:700;margin-bottom:4px;color:var(--ink)}
+.option-desc{font-size:12.5px;color:var(--ink-4);line-height:1.45}
+.option-check{position:absolute;top:14px;right:14px;width:18px;height:18px;border:1.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.option-check svg{width:12px;height:12px;color:#fff;opacity:0}
+.option.selected{background:var(--paper);box-shadow:inset 0 0 0 2px var(--red)}
+.option.selected .option-check{background:var(--red);border-color:var(--red)}
+.option.selected .option-check svg{opacity:1}
+.option.selected .option-n{color:var(--red)}
+
+/* CHECK PILLS (flat radio pills for small options) */
+.checks{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line)}
+.check{position:relative;padding:10px 18px;font-size:12.5px;font-weight:500;color:var(--ink-3);cursor:pointer;transition:all .15s;user-select:none;border-right:1px solid var(--line);background:#fff;letter-spacing:.02em}
+.check:last-child{border-right:none}
+.check input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.check:hover{background:var(--paper)}
+.check.selected{background:var(--navy-000);color:#fff}
+
+/* NAV BUTTONS */
+.step-nav{display:flex;justify-content:space-between;align-items:stretch;gap:0;margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;border:none;transition:all .15s}
+.btn-prev{background:#fff;color:var(--ink-3);border:1px solid var(--line)}
+.btn-prev:hover{background:var(--paper);color:var(--ink)}
+.btn-prev:disabled{opacity:.5;cursor:not-allowed}
+.btn-next{background:var(--navy-000);color:#fff}
+.btn-next:hover{background:var(--navy-200)}
+.btn-submit{background:var(--red);color:#fff}
+.btn-submit:hover{background:#a81a1f}
+
+/* SIDEBAR */
+.sidebar{position:sticky;top:96px}
+.side-card{background:#fff;border:1px solid var(--line);padding:28px;margin-bottom:16px;position:relative}
+.side-card::before{content:'';position:absolute;top:0;left:0;width:40px;height:2px;background:var(--red)}
+.side-card h4{font-size:11px;font-weight:600;color:var(--ink-5);text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px}
+.side-list{list-style:none}
+.side-list li{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink-3);font-weight:500;padding:9px 0;line-height:1.5}
+.side-list li::before{content:'';width:6px;height:6px;background:var(--red);flex-shrink:0;margin-top:7px}
+.side-card.quote{background:var(--navy-000);color:#fff;border:none;overflow:hidden}
+.side-card.quote::before{background:var(--red)}
+.side-card.quote h4{color:rgba(255,255,255,.5)}
+.side-card.quote .quote-text{font-size:15px;line-height:1.6;font-weight:500;color:#fff;margin-bottom:16px;font-style:italic}
+.side-card.quote .author{font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.02em}
+.side-card.quote .author strong{color:#fff;font-weight:700;display:block;text-transform:uppercase;letter-spacing:.04em;font-size:10.5px;margin-bottom:2px}
+.side-contact{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid var(--line-2);font-size:14px}
+.side-contact:first-of-type{border-top:none;padding-top:0}
+.side-contact-badge{font-size:11px;font-weight:600;color:#fff;background:var(--red);padding:8px 10px;letter-spacing:.04em;text-transform:uppercase;flex-shrink:0}
+.side-contact-lab{font-size:10px;color:var(--ink-5);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.side-contact-val{font-size:14px;color:var(--ink-2);font-weight:600;font-variant-numeric:tabular-nums}
+.side-contact:hover .side-contact-val{color:var(--red)}
+
+/* SUCCESS */
+.success-card{background:#fff;border:1px solid var(--line);padding:56px 40px;text-align:center;display:none;animation:fadeUp .4s ease both;position:relative}
+.success-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#16a34a}
+.success-card.active{display:block}
+.success-ico{width:56px;height:56px;background:#16a34a;color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 24px}
+.success-ico svg{width:28px;height:28px}
+.success-card h2{font-size:26px;font-weight:700;margin-bottom:12px;letter-spacing:-.02em}
+.success-card p{font-size:15px;color:var(--ink-4);line-height:1.65;max-width:440px;margin:0 auto 28px}
+.success-actions{display:flex;justify-content:center;gap:0;flex-wrap:wrap}
+
+/* MODAL */
+.modal-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(5,16,28,.7);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn .2s ease both}
+.modal-backdrop.active{display:flex}
+.modal{background:#fff;max-width:440px;width:100%;padding:32px;border:1px solid var(--line);animation:fadeUp .25s ease both;position:relative}
+.modal::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--red)}
+.modal-ico{width:48px;height:48px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.modal-ico svg{width:24px;height:24px}
+.modal h3{font-size:20px;font-weight:700;margin-bottom:8px;letter-spacing:-.01em}
+.modal p{font-size:14px;color:var(--ink-4);line-height:1.6;margin-bottom:24px}
+.modal-actions{display:flex;gap:0}
+.modal-actions .btn{flex:1;justify-content:center}
+.btn-danger{background:var(--red);color:#fff}.btn-danger:hover{background:#a81a1f}
+
+@media(max-width:960px){.dev-layout{grid-template-columns:1fr}.sidebar{position:static;order:2}}
+@media(max-width:1024px){
+  :root{--nav-h:70px}
+  .nav-links{display:none;position:absolute;top:calc(100% + 1px);right:0;min-width:240px;background:rgba(5,16,28,.98);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;border:1px solid rgba(255,255,255,.08);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s;justify-content:flex-start}
+  nav.dd-open .nav-links{display:flex;opacity:1;visibility:visible;transform:translateY(0)}
+  .nav-links a{padding:13px 22px;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px;color:#fff}
+  .nav-links a:last-child{border-bottom:none}
+  .nav-links a.active{color:var(--teal-300)}
+  .nav-links a.active::after{display:none}
+  .nav-dd{display:inline-flex}
+}
+@media(max-width:640px){
+  :root{--nav-h:64px}
+  .container,.nav-inner,.dev-layout{padding-left:20px;padding-right:20px}
+  .nav-logo img{height:32px}
+  .nav-inner{gap:10px}
+  .nav-actions{gap:6px}
+  .nav-phone{background:var(--red);padding:0 12px;font-size:11px;letter-spacing:.04em;text-transform:uppercase;gap:6px;height:36px;display:inline-flex;align-items:center}
+  .nav-phone .phone-text{display:none}
+  .nav-phone::after{content:'Urgence';font-size:11px;font-weight:700;letter-spacing:.06em}
+  .nav-phone .phone-icon{width:14px;height:14px}
+  body{padding-bottom:56px}
+  .mobile-bottom{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--navy-000);border-top:1px solid rgba(255,255,255,.1);z-index:99;padding:0;height:56px}
+  .mobile-bottom a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:rgba(255,255,255,.7);font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:color .15s;padding:8px 4px}
+  .mobile-bottom a:hover{color:#fff;background:rgba(255,255,255,.04)}
+  .mobile-bottom svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  body{padding-bottom:0}
+  .btn-nav{padding:0 12px;font-size:11px;letter-spacing:.04em;height:36px;display:inline-flex;align-items:center}
+  .nav-dd{padding:0 12px;font-size:11px;letter-spacing:.04em;gap:6px;height:36px;display:inline-flex;align-items:center}
+  .form-card{padding:20px 16px}
+  .prog-section{padding-bottom:16px;margin-bottom:16px}
+  .prog-title{font-size:17px}
+  .step-title{font-size:18px}
+  .step-sub{margin-bottom:20px}
+  .row{grid-template-columns:1fr}
+  .options{grid-template-columns:1fr}
+  .option{border-right:none;border-bottom:1px solid var(--line)}
+  .dev-layout{margin:12px auto}
+}
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal-right{opacity:0;transform:translateX(32px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal-left.visible,.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-zoom{opacity:0;transform:scale(.92);transition:opacity .6s ease,transform .6s ease}
+.reveal-zoom.visible{opacity:1;transform:scale(1)}
+.feat-img img{transition:transform .6s cubic-bezier(.22,.61,.36,1),filter .3s ease}
+.feat-img:hover img{transform:scale(1.04);filter:saturate(1.1) contrast(1.05)}
+.btn-primary:active,.btn-dark:active,.btn-nav:active,.btn-feat:active{transform:scale(.97);transition:transform .1s}
+img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.feat-img:hover img,.svc-visual:hover,.case:hover,.channel:hover,.brand-slide:hover img{transform:scale(1.04)}
+(max-width:1024px){.feat-img{position:static!important;align-self:auto!important}}
+@media(min-width:641px){.mobile-bottom{display:none!important}body{padding-bottom:0!important}}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="adsi_homepage_design.html" class="nav-logo" aria-label="ADSI Fonti SA"><img src="logo-adsi(2).png" alt="ADSI Fonti SA"></a>
+    <div class="nav-links" id="navLinks">
+      <a href="adsi_homepage_design.html">Accueil</a>
+      <a href="adsi_telesurveilance_v2.html">Télésurveillance</a>
+      <a href="adsi_videosurveillance.html">Vidéosurveillance</a>
+      <a href="adsi_conseil_audit.html">Conseil</a>
+      <a href="adsi_partenaires.html">Partenaires</a>
+      <a href="adsi_apropos.html">À propos</a>
+      <a href="adsi_contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="tel:+41581220002" class="nav-phone" aria-label="Appeler le +41 58 122 00 02"><svg class="phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span class="phone-text">+41 58 122 00 02</span></a>
+      <a href="adsi_devis.html" class="btn-nav">Devis</a>
+      <button class="nav-dd" id="ddBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Menu"><span class="burger-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="dev-layout">
+  <div>
+    <form class="form-card" id="devis-form" autocomplete="on" novalidate>
+
+      <!-- Progress intégré -->
+      <div class="prog-section" id="prog-wrap">
+        <div class="prog-head">
+          <div class="prog-title">Devis gratuit</div>
+          <div class="prog-pills">Sans engagement · 5 min</div>
+        </div>
+        <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:25%"></div></div>
+        <div class="prog-steps">
+          <div class="prog-step active" data-step="1"><div class="num">01</div><div class="label">Profil</div></div>
+          <div class="prog-step" data-step="2"><div class="num">02</div><div class="label">Services</div></div>
+          <div class="prog-step" data-step="3"><div class="num">03</div><div class="label">Projet</div></div>
+          <div class="prog-step" data-step="4"><div class="num">04</div><div class="label">Contact</div></div>
+        </div>
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="step active" data-step="1">
+        <div class="step-title">Vous êtes…</div>
+        <div class="step-sub">Ces informations nous aident à adapter notre proposition à votre contexte.</div>
+        <div class="field">
+          <label>Votre profil <span class="req">*</span></label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="profile" value="particulier" required>
+              <div class="option-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></div>
+              <div class="option-n">/ 01</div>
+              <div class="option-title">Particulier</div>
+              <div class="option-desc">Maison, villa, appartement</div>
+            </label>
+            <label class="option">
+              <input type="radio" name="profile" value="entreprise">
+              <div class="option-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></div>
+              <div class="option-n">/ 02</div>
+              <div class="option-title">Entreprise</div>
+              <div class="option-desc">PME, commerce, bureau, entrepôt</div>
+            </label>
+            <label class="option">
+              <input type="radio" name="profile" value="immobilier">
+              <div class="option-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></div>
+              <div class="option-n">/ 03</div>
+              <div class="option-title">Immobilier</div>
+              <div class="option-desc">Architecte, régie, promoteur</div>
+            </label>
+          </div>
+          <div class="error">Merci de sélectionner votre profil.</div>
+        </div>
+        <div class="step-nav">
+          <span></span>
+          <button type="button" class="btn btn-next" data-action="next">Continuer →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step" data-step="2">
+        <div class="step-title">Quel(s) service(s) vous intéresse(nt) ?</div>
+        <div class="step-sub">Plusieurs choix possibles. Si vous hésitez, sélectionnez « Je ne sais pas encore ».</div>
+        <div class="field">
+          <label>Vos besoins <span class="req">*</span></label>
+          <div class="options" style="grid-template-columns:repeat(3,1fr)">
+            <label class="option"><input type="checkbox" name="services" value="telesurveillance"><div class="option-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></div><div class="option-n">/ 01</div><div class="option-title">Télésurveillance</div><div class="option-desc">Traitement d'alarmes 24/7</div></label>
+            <label class="option"><input type="checkbox" name="services" value="videosurveillance"><div class="option-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></div><div class="option-n">/ 02</div><div class="option-title">Vidéosurveillance</div><div class="option-desc">Caméras, IA vidéo & audio</div></label>
+            <label class="option"><input type="checkbox" name="services" value="conseil"><div class="option-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></div><div class="option-n">/ 03</div><div class="option-title">Conseil & Audit</div><div class="option-desc">Étude opérationnelle sur site</div></label>
+            <label class="option"><input type="checkbox" name="services" value="controle-acces"><div class="option-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></div><div class="option-n">/ 04</div><div class="option-title">Contrôle d'accès</div><div class="option-desc">Badges, barrières, portes</div></label>
+            <label class="option"><input type="checkbox" name="services" value="iot"><div class="option-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></div><div class="option-n">/ 05</div><div class="option-title">IoT & capteurs</div><div class="option-desc">Chaîne du froid, qualité d'air</div></label>
+            <label class="option"><input type="checkbox" name="services" value="inconnu"><div class="option-check"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></div><div class="option-n">/ 06</div><div class="option-title">Je ne sais pas</div><div class="option-desc">Conseillez-moi</div></label>
+          </div>
+          <div class="error">Sélectionnez au moins une option.</div>
+        </div>
+        <div class="step-nav">
+          <button type="button" class="btn btn-prev" data-action="prev">← Précédent</button>
+          <button type="button" class="btn btn-next" data-action="next">Continuer →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step" data-step="3">
+        <div class="step-title">Votre projet en quelques détails</div>
+        <div class="step-sub">Plus vous êtes précis, plus notre proposition sera pertinente.</div>
+        <div class="row">
+          <div class="field">
+            <label>Canton du site <span class="req">*</span></label>
+            <select name="canton" required>
+              <option value="">— Choisir —</option>
+              <option value="GE">Genève</option>
+              <option value="VD">Vaud</option>
+              <option value="VS">Valais</option>
+              <option value="FR">Fribourg</option>
+              <option value="NE">Neuchâtel</option>
+              <option value="JU">Jura</option>
+              <option value="autre">Autre canton</option>
+            </select>
+            <div class="error">Sélectionnez un canton.</div>
+          </div>
+          <div class="field">
+            <label>Ville / localité</label>
+            <input type="text" name="city" placeholder="Grand-Lancy, Lausanne…">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label>Type de site</label>
+            <select name="siteType">
+              <option value="">— Choisir —</option>
+              <option>Maison / villa</option>
+              <option>Appartement / copropriété</option>
+              <option>Bureau / cabinet</option>
+              <option>Commerce / boutique</option>
+              <option>Entrepôt / industrie</option>
+              <option>Chantier / temporaire</option>
+              <option>Parking</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Surface / nb de sites</label>
+            <input type="text" name="surface" placeholder="Ex. 180 m² ou 3 sites">
+          </div>
+        </div>
+        <div class="field">
+          <label>Délai souhaité</label>
+          <div class="checks">
+            <label class="check"><input type="radio" name="delay" value="urgent"><span>Urgent (&lt; 2 sem.)</span></label>
+            <label class="check"><input type="radio" name="delay" value="1mois"><span>Sous 1 mois</span></label>
+            <label class="check"><input type="radio" name="delay" value="3mois"><span>Dans les 3 mois</span></label>
+            <label class="check"><input type="radio" name="delay" value="flexible"><span>Flexible</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Décrivez votre besoin (optionnel)</label>
+          <textarea name="description" placeholder="Contexte, contraintes, attentes particulières…"></textarea>
+          <div class="hint">Plus c'est précis, mieux c'est.</div>
+        </div>
+        <div class="step-nav">
+          <button type="button" class="btn btn-prev" data-action="prev">← Précédent</button>
+          <button type="button" class="btn btn-next" data-action="next">Continuer →</button>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="step" data-step="4">
+        <div class="step-title">Comment vous recontacter ?</div>
+        <div class="step-sub">Nous revenons vers vous sous 24 heures avec une première proposition.</div>
+        <div class="row">
+          <div class="field"><label>Prénom <span class="req">*</span></label><input type="text" name="firstName" required autocomplete="given-name"><div class="error">Merci d'indiquer votre prénom.</div></div>
+          <div class="field"><label>Nom <span class="req">*</span></label><input type="text" name="lastName" required autocomplete="family-name"><div class="error">Merci d'indiquer votre nom.</div></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Email <span class="req">*</span></label><input type="email" name="email" required autocomplete="email" placeholder="vous@exemple.ch"><div class="error">Email invalide.</div></div>
+          <div class="field"><label>Téléphone <span class="req">*</span></label><input type="tel" name="phone" required autocomplete="tel" placeholder="+41 79 000 00 00"><div class="error">Téléphone invalide.</div></div>
+        </div>
+        <div class="field"><label>Société (si applicable)</label><input type="text" name="company" autocomplete="organization"></div>
+        <div class="field">
+          <label>Préférence de contact</label>
+          <div class="checks">
+            <label class="check"><input type="radio" name="contactPref" value="phone"><span>Par téléphone</span></label>
+            <label class="check"><input type="radio" name="contactPref" value="email"><span>Par email</span></label>
+            <label class="check"><input type="radio" name="contactPref" value="any"><span>Peu importe</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label style="display:flex;align-items:flex-start;gap:10px;font-family:inherit;text-transform:none;letter-spacing:normal;font-size:13px;color:var(--ink-3);font-weight:400">
+            <input type="checkbox" name="rgpd" required style="width:16px;height:16px;accent-color:var(--red);margin-top:2px">
+            <span>J'accepte d'être recontacté·e au sujet de ma demande. Mes données restent confidentielles. <span class="req">*</span></span>
+          </label>
+          <div class="error">Merci de confirmer votre accord.</div>
+        </div>
+        <div class="step-nav">
+          <button type="button" class="btn btn-prev" data-action="prev">← Précédent</button>
+          <button type="submit" class="btn btn-submit">Envoyer ma demande →</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="success-card" id="success-card">
+      <div class="success-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></div>
+      <h2>Demande bien reçue — merci.</h2>
+      <p>Un expert ADSI prend contact avec vous <strong>sous 24 heures</strong> pour qualifier votre besoin et préparer une première proposition. En cas d'urgence, appelez-nous directement.</p>
+      <div class="success-actions">
+        <a href="adsi_homepage_design.html" class="btn btn-prev">← Retour à l'accueil</a>
+        <a href="tel:+41581220002" class="btn btn-next"><span class="pulse-dot" style="background:#fff"></span>+41 58 122 00 02</a>
+      </div>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="side-card">
+      <h4>// Ce que vous obtenez</h4>
+      <ul class="side-list">
+        <li>Un rappel sous 24 heures</li>
+        <li>Un audit gratuit sur site</li>
+        <li>Un chiffrage transparent sous 5 j</li>
+        <li>Aucun engagement</li>
+      </ul>
+    </div>
+    <div class="side-card quote">
+      <h4>// Témoignage</h4>
+      <div class="quote-text">« Deux autres centrales avaient refusé notre chantier. ADSI a proposé une solution sur mesure en 5 jours. Zéro vol depuis. »</div>
+      <div class="author"><strong>Directeur travaux</strong>Entreprise générale · Jura</div>
+    </div>
+    <div class="side-card">
+      <h4>// Besoin urgent ?</h4>
+      <a href="tel:+41581220002" class="side-contact">
+        <div class="side-contact-badge">TEL</div>
+        <div><div class="side-contact-lab">Téléphone</div><div class="side-contact-val">+41 58 122 00 02</div></div>
+      </a>
+      <a href="mailto:info@adsi-fonti.ch" class="side-contact">
+        <div class="side-contact-badge">MAIL</div>
+        <div><div class="side-contact-lab">Email</div><div class="side-contact-val">info@adsi-fonti.ch</div></div>
+      </a>
+    </div>
+  </aside>
+</div>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="leave-modal" role="dialog" aria-modal="true" aria-labelledby="leave-title">
+  <div class="modal">
+    <div class="modal-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
+    <h3 id="leave-title">Quitter sans envoyer votre demande ?</h3>
+    <p>Vous avez commencé à remplir le formulaire. Si vous quittez maintenant, vos informations seront perdues.</p>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-prev" id="modal-stay">Continuer</button>
+      <button type="button" class="btn btn-danger" id="modal-leave">Quitter</button>
+    </div>
+  </div>
+</div>
+
+<!-- Barre inférieure mobile -->
+<div class="mobile-bottom">
+  <a href="tel:+41581220002"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>Appeler</a>
+  <a href="mailto:info@adsi-fonti.ch"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>Email</a>
+  <a href="https://maps.google.com/?q=Route+des+Jeunes+16c+1212+Grand-Lancy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Adresse</a>
+</div>
+
+<script>
+const nav=document.getElementById('mainNav');
+const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>0);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+const ddBtn=document.getElementById('ddBtn');
+ddBtn?.addEventListener('click',e=>{e.stopPropagation();const open=nav.classList.toggle('dd-open');ddBtn.setAttribute('aria-expanded',open)});
+document.addEventListener('click',e=>{if(!e.target.closest('nav')){nav.classList.remove('dd-open');ddBtn?.setAttribute('aria-expanded','false')}});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('dd-open');ddBtn?.setAttribute('aria-expanded','false')}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){nav.classList.remove('dd-open');ddBtn?.setAttribute('aria-expanded','false')}});
+
+const form=document.getElementById('devis-form');
+const steps=form.querySelectorAll('.step');
+const progFill=document.getElementById('prog-fill');
+const progSteps=document.querySelectorAll('.prog-step');
+const successCard=document.getElementById('success-card');
+const progWrap=document.getElementById('prog-wrap');
+let currentStep=1;const totalSteps=steps.length;
+let formDirty=false;let submitted=false;
+
+form.querySelectorAll('.option').forEach(opt=>{
+  const input=opt.querySelector('input');
+  syncOption(opt,input);
+  opt.addEventListener('click',()=>{
+    setTimeout(()=>{
+      if(input.type==='radio'){
+        form.querySelectorAll(`input[name="${input.name}"]`).forEach(r=>syncOption(r.closest('.option'),r));
+      }else syncOption(opt,input);
+    },0);
+  });
+});
+function syncOption(opt,input){opt.classList.toggle('selected',input.checked)}
+
+form.querySelectorAll('.check').forEach(ch=>{
+  const input=ch.querySelector('input');if(!input)return;
+  const sync=()=>{
+    if(input.type==='radio'){
+      form.querySelectorAll(`input[name="${input.name}"]`).forEach(r=>r.closest('.check')?.classList.toggle('selected',r.checked));
+    }else ch.classList.toggle('selected',input.checked);
+  };
+  sync();ch.addEventListener('click',()=>setTimeout(sync,0));
+});
+
+form.querySelectorAll('[data-action="next"]').forEach(btn=>btn.addEventListener('click',()=>{if(validateStep(currentStep))goTo(currentStep+1)}));
+form.querySelectorAll('[data-action="prev"]').forEach(btn=>btn.addEventListener('click',()=>goTo(currentStep-1)));
+
+function goTo(n){
+  if(n<1||n>totalSteps)return;
+  steps.forEach(s=>s.classList.toggle('active',+s.dataset.step===n));
+  currentStep=n;
+  progFill.style.width=(n/totalSteps*100)+'%';
+  progSteps.forEach(ps=>{
+    const i=+ps.dataset.step;
+    ps.classList.toggle('active',i===n);
+    ps.classList.toggle('done',i<n);
+  });
+  window.scrollTo({top:progWrap.offsetTop-90,behavior:'smooth'});
+}
+
+function validateStep(n){
+  const step=form.querySelector(`.step[data-step="${n}"]`);
+  let ok=true;
+  step.querySelectorAll('.field.has-error').forEach(f=>f.classList.remove('has-error'));
+  if(n===1){if(!form.querySelector('input[name="profile"]:checked'))ok=markError(step,'.options')}
+  if(n===2){if(!form.querySelector('input[name="services"]:checked'))ok=markError(step,'.options')}
+  if(n===3){const canton=form.querySelector('select[name="canton"]');if(!canton.value)ok=markError(canton.closest('.field'))}
+  if(n===4){
+    ['firstName','lastName','email','phone'].forEach(name=>{
+      const el=form.querySelector(`[name="${name}"]`);
+      if(!el.value.trim()){markError(el.closest('.field'));ok=false}
+      else if(name==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value)){markError(el.closest('.field'));ok=false}
+      else if(name==='phone'&&el.value.replace(/[^0-9]/g,'').length<9){markError(el.closest('.field'));ok=false}
+    });
+    const rgpd=form.querySelector('input[name="rgpd"]');
+    if(!rgpd.checked){markError(rgpd.closest('.field'));ok=false}
+  }
+  return ok;
+}
+function markError(root,sel){const field=sel?root.querySelector(sel)?.closest('.field'):root;field?.classList.add('has-error');return false}
+
+form.addEventListener('input',()=>formDirty=true);
+form.addEventListener('change',()=>formDirty=true);
+
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  if(!validateStep(4))return;
+  submitted=true;formDirty=false;
+  form.style.display='none';
+  progWrap.style.display='none';
+  successCard.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+window.addEventListener('beforeunload',e=>{
+  if(formDirty&&!submitted){e.preventDefault();e.returnValue='';return''}
+});
+
+const modal=document.getElementById('leave-modal');
+const modalStay=document.getElementById('modal-stay');
+const modalLeave=document.getElementById('modal-leave');
+let pendingHref=null;
+
+document.addEventListener('click',e=>{
+  const link=e.target.closest('a');
+  if(!link||!formDirty||submitted)return;
+  const href=link.getAttribute('href');
+  if(!href||/^(tel:|mailto:|#|javascript:)/i.test(href)||link.target==='_blank')return;
+  const url=new URL(href,window.location.href);
+  if(url.pathname===window.location.pathname&&url.search===window.location.search)return;
+  e.preventDefault();pendingHref=href;modal.classList.add('active');
+});
+modalStay.addEventListener('click',()=>{modal.classList.remove('active');pendingHref=null});
+modalLeave.addEventListener('click',()=>{formDirty=false;if(pendingHref)window.location.href=pendingHref});
+modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('active');pendingHref=null}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('active')){modal.classList.remove('active');pendingHref=null}});
+</script>
+</body>
+</html>
