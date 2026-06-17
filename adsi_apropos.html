@@ -27,7 +27,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 
 /* NAV — opaque at top, glass on scroll */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy-000);transition:background .3s ease;border-bottom:1px solid transparent;height:var(--nav-h);display:flex;align-items:center}
-nav.scrolled{background:rgba(5,16,28,.72);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);border-bottom-color:rgba(255,255,255,.08)}
+nav.scrolled{background:linear-gradient(180deg,rgba(11,22,37,.92),rgba(6,15,26,.86));backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);border-bottom-color:rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 8px 28px -14px rgba(0,0,0,.55)}
 .nav-inner{max-width:var(--max);margin:0 auto;padding:0 32px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .nav-logo{flex-shrink:0;z-index:101;display:flex;align-items:center}.nav-logo img{height:40px;width:auto;display:block}
 .nav-dd{display:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:#fff;padding:10px 16px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;align-items:center;gap:8px;transition:all .15s;font-family:inherit}
@@ -50,7 +50,7 @@ nav.dd-open .nav-dd .burger-icon span:nth-child(3){transform:translateY(-6px) ro
 .btn-nav{background:var(--red);color:#fff!important;padding:10px 18px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .15s;white-space:nowrap}
 .btn-nav:hover{background:#a81a1f}
 
-.page-hero{position:relative;color:#fff;padding:88px 0 112px;overflow:hidden;border-bottom:3px solid var(--red);background-color:var(--navy-000);background-image:linear-gradient(rgba(5,16,28,.72),rgba(5,16,28,.85)),url('BANNIERES/PAGE%20A%20PROPOS.png');background-size:cover,cover;background-position:center,center;background-repeat:no-repeat,no-repeat}
+.page-hero{position:relative;color:#fff;padding:88px 0 112px;overflow:hidden;border-bottom:3px solid var(--red);background-color:var(--navy-000);background-image:linear-gradient(rgba(5,16,28,.96),rgba(5,16,28,.85)),url('BANNIERES/PAGE%20A%20PROPOS.png');background-size:cover,cover;background-position:center,center;background-repeat:no-repeat,no-repeat}
 /* Section backgrounds — images visibles mais texte lisible */
 section.block.bg-culture,section.block.bg-story,section.block.alt.bg-ecosys,section.block.alt.bg-values{position:relative;isolation:isolate}
 section.block.bg-culture::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.82),rgba(255,255,255,.9)),url('PICTURES/PAGE%20A%20PROPOS%20NOTRE%20CULTURE.jpeg') center/cover no-repeat;z-index:-1}
@@ -249,7 +249,7 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
     <div class="page-hero-inner">
       <div class="breadcrumb anim-1"><a href="adsi_homepage_design.html">Accueil</a><span class="sep">/</span><span>À propos</span></div>
       <h1 class="anim-2">Des experts à votre service,<br>pour une <span class="accent">sécurité sans faille.</span></h1>
-      <p class="page-hero-sub anim-3">ADSI Fonti SA — <strong>Agence Digital de Surveillance et d'Innovation</strong>. Nous sommes spécialisés dans les concepts de sécurité alliant l'humain et la technologie.</p>
+      <p class="page-hero-sub anim-3">ADSI Fonti SA : <strong>Agence Digital de Surveillance et d'Innovation</strong>. Nous sommes spécialisés dans les concepts de sécurité alliant l'humain et la technologie.</p>
       <div class="hero-ctas anim-3">
         <a href="adsi_contact.html" class="btn-primary">Nous rencontrer</a>
         <a href="tel:+41581220002" class="btn-outline"><span class="pulse-dot"></span>+41 58 122 00 02</a>
@@ -263,7 +263,7 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
     <div class="story">
       <div class="story-text">
         <h2 class="section-title"><span class="section-label">Notre histoire</span>Une <span class="accent">véritable loge virtuelle,</span> depuis 1963.</h2>
-        <p>ADSI Fonti opère 24 heures sur 24 comme <strong>récepteur d'alarmes</strong>, en partenariat avec les services d'urgence — police, pompiers et secouristes. Notre mission : accompagner la sécurité de nos clients par un suivi méticuleux et une résolution optimisée des événements.</p>
+        <p>ADSI Fonti opère 24 heures sur 24 comme <strong>récepteur d'alarmes</strong>, en partenariat avec les services d'urgence : police, pompiers et secouristes. Notre mission : accompagner la sécurité de nos clients par un suivi méticuleux et une résolution optimisée des événements.</p>
         <p>Plus qu'une centrale, nous sommes une véritable <strong>loge virtuelle</strong> : un relais humain, formé, joignable, qui connaît votre dossier et qui agit selon le protocole défini avec vous.</p>
         <p>Depuis plus de soixante ans, nous construisons des solutions sur mesure pour les particuliers, les entreprises et les professionnels de la construction en Suisse romande.</p>
       </div>
@@ -288,16 +288,16 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
   <div class="container">
     <div class="section-head">
       <h2 class="section-title"><span class="section-label">Nos valeurs</span>L'humain et la technologie, <span class="accent">dans le bon ordre.</span></h2>
-      <p class="section-lead">Nous ne croyons pas au « tout-technologique » ni au « tout-humain ». La bonne réponse, c'est le bon mélange — pour votre contexte.</p>
+      <p class="section-lead">Nous ne croyons pas au « tout-technologique » ni au « tout-humain ». La bonne réponse, c'est le bon mélange, pour votre contexte.</p>
     </div>
     <div class="values mobile-carousel">
       <div class="value reveal"><div class="value-n">/ 01</div><h3>L'humain d'abord</h3><p>Un interlocuteur unique qui connaît votre dossier. Une centrale qui écoute. Des opérateurs formés, présents, réactifs.</p></div>
-      <div class="value reveal d1"><div class="value-n">/ 02</div><h3>Le sur mesure, toujours</h3><p>Chaque projet est unique. Aucun dossier identique — c'est une volonté, pas une contrainte. Nous nous adaptons à vous.</p></div>
+      <div class="value reveal d1"><div class="value-n">/ 02</div><h3>Le sur mesure, toujours</h3><p>Chaque projet est unique. Aucun dossier identique : c'est une volonté, pas une contrainte. Nous nous adaptons à vous.</p></div>
       <div class="value reveal d2"><div class="value-n">/ 03</div><h3>L'innovation au service</h3><p>IA vidéo et audio, IoT, processus intelligents : les meilleures technologies, intégrées avec rigueur et jamais à l'aveugle.</p></div>
     </div>
     <div class="card-stepper" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
     <div class="section-cta">
-      <div class="section-cta-txt">Découvrez nos <strong>expertises concrètes</strong> — télésurveillance, vidéosurveillance, conseil.</div>
+      <div class="section-cta-txt">Découvrez nos <strong>expertises concrètes</strong> : télésurveillance, vidéosurveillance, conseil.</div>
       <div class="section-cta-btns">
         <a href="adsi_telesurveilance_v2.html" class="btn-dark">Voir les services</a>
         <a href="adsi_devis.html" class="btn-link">Demander un devis →</a>

@@ -21,7 +21,7 @@ Points clés :
 - Escalades paramétrables par horaire et type d'événement
 - Coordination directe avec police, pompiers, secouristes
 
-Métriques : < 60 s qualif. moyenne · 24/7 centrale · 100 % alarmes filtrées
+Métriques : 24/7 centrale
 
 ## 02 — Travailleurs isolés (PTI / DATI)
 **Protéger ceux qui travaillent seuls.**
@@ -33,7 +33,7 @@ Points clés :
 - Géolocalisation GPS / intérieur selon le contexte
 - Procédure d'escalade spécifique à votre structure
 
-Métriques : DATI conforme · < 30 s prise en charge
+Métriques : DATI conforme
 
 ## 03 — Contrôle d'accès
 **Qui entre, quand, et avec quelle autorisation.**

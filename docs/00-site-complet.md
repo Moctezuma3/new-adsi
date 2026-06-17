@@ -19,10 +19,8 @@ Baseline : *Votre sécurité, entre expertise humaine et technologie.*
 
 - **60+** années d'expertise · depuis 1963
 - **24/7** centrale active · sans interruption
-- **< 60 s** qualification d'alarme moyenne
+- **+100 patrouilles**
 - **6** cantons couverts en Suisse romande
-
-Stats terrain (hero mockup) : 2 847 sites supervisés · 42 s temps moyen qualif.
 
 ---
 

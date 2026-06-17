@@ -3,18 +3,12 @@
 ## Hero
 - Eyebrow : *Agence Digital de Surveillance · depuis 1963*
 - H1 : **Votre sécurité, entre expertise humaine et technologie.**
-- Sub : Télésurveillance, vidéosurveillance et conseil sur mesure en Suisse romande. Une centrale active 24/7, un interlocuteur unique, une réponse sous 24 h.
+- Sub : Télésurveillance, vidéosurveillance, préconisation, installation. Du conseil standard au sur mesure en Suisse romande. Un savoir-faire opérationnel grâce à sa centrale active 24/7, un interlocuteur unique, une réponse sous 24 h.
 - CTAs : Demander un devis · +41 58 122 00 02
 - Trust badges : Déplacement offert · Réponse sous 24 h · Sans engagement
 
-## Panneau live (hero droit)
-- Centrale ADSI — Live · En ligne
-- Sites supervisés : 2 847
-- Qualif. moyenne : 42 s
-- Flux : Alarme qualifiée GE-042 · Accès autorisé VD-108 · Intervention JU-011
-
 ## KPI strip (4 cellules)
-60+ années · 24/7 centrale · < 60 s qualif. · 6 cantons
+60+ années · 24/7 centrale · +100 patrouilles · 6 cantons
 
 ## Service 01 — Télésurveillance
 **Vos alarmes traitées selon vos règles.**

@@ -20,7 +20,6 @@
 ### Urgence 24/7 (card sombre)
 - Ligne directe : **+41 58 122 00 01**
 - Disponible 24/7, jours fériés inclus
-- Qualification < 60 s
 
 ### Zone d'intervention
 Présents partout en Suisse romande : GE · VD · VS · FR · NE · JU
@@ -48,7 +47,7 @@ Redirige vers formulaire structuré en 4 étapes (Profil · Besoins · Projet ·
 Progress bar avec stepper 01/02/03/04
 
 ### Sidebar
-- Ce que vous obtenez : rappel 24 h · audit gratuit · chiffrage 5 j · 0 engagement
+- Ce que vous obtenez : rappel 24 h · audit gratuit
 - Témoignage (Directeur travaux, Jura) : "Deux autres centrales avaient refusé notre chantier. ADSI a proposé une solution sur mesure en 5 jours. Zéro vol depuis."
 - Besoin urgent : téléphone + email
 

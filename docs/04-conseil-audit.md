@@ -19,12 +19,12 @@ Avant de vendre une solution, nous venons voir. Un expert ADSI se déplace, obse
 Quatre axes : risques réels · adéquation humain/techno · contraintes opérationnelles · chiffrage transparent.
 
 ### Carrousel — 4 étapes
-1. **AUDIT 01 — Visite sur site** (J+0) · Gratuit, déplacement offert. Analyse du lieu, flux, points faibles, contraintes techniques et légales.
-2. **AUDIT 02 — Cartographie des risques** (J+1 à J+2) · Analyse interne. Zones sensibles, scénarios d'intrusion, enjeux métier. On priorise.
-3. **AUDIT 03 — Équilibre humain / technologie** (J+3 à J+4) · Arbitrage. Quel dispositif humain, quelle technologie, quelle dose.
-4. **AUDIT 04 — Rapport & chiffrage** (J+5) · Sans engagement. Livrable écrit avec recommandations justifiées, options, chiffrage transparent.
+1. **AUDIT 01 — Visite sur site** · Gratuit, déplacement offert. Analyse du lieu, flux, points faibles, contraintes techniques et légales.
+2. **AUDIT 02 — Cartographie des risques** · Analyse interne. Zones sensibles, scénarios d'intrusion, enjeux métier. On priorise.
+3. **AUDIT 03 — Équilibre humain / technologie** · Arbitrage. Quel dispositif humain, quelle technologie, quelle dose.
+4. **AUDIT 04 — Rapport & chiffrage** · Sans engagement. Livrable écrit avec recommandations justifiées, options, chiffrage transparent.
 
-Métriques : Gratuit (déplacement offert) · 5 j rapport · 0 engagement
+Métriques : Gratuit (déplacement offert)
 
 ## 02 — Protocoles d'alarme
 **Vos règles, votre organisation, votre protocole.**

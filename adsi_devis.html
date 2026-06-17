@@ -23,7 +23,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 
 /* NAV — identique toutes pages */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy-000);transition:background .3s ease;border-bottom:1px solid transparent;height:var(--nav-h);display:flex;align-items:center}
-nav.scrolled{background:rgba(5,16,28,.72);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);border-bottom-color:rgba(255,255,255,.08)}
+nav.scrolled{background:linear-gradient(180deg,rgba(11,22,37,.92),rgba(6,15,26,.86));backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);border-bottom-color:rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 8px 28px -14px rgba(0,0,0,.55)}
 .nav-inner{max-width:var(--max);margin:0 auto;padding:0 32px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative}
 .nav-logo{flex-shrink:0;z-index:101;display:flex;align-items:center}
 .nav-logo img{height:40px;width:auto;display:block}
@@ -324,7 +324,7 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
           <div class="field">
             <label>Canton du site <span class="req">*</span></label>
             <select name="canton" required>
-              <option value="">— Choisir —</option>
+              <option value="">Choisir…</option>
               <option value="GE">Genève</option>
               <option value="VD">Vaud</option>
               <option value="VS">Valais</option>
@@ -344,7 +344,7 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
           <div class="field">
             <label>Type de site</label>
             <select name="siteType">
-              <option value="">— Choisir —</option>
+              <option value="">Choisir…</option>
               <option>Maison / villa</option>
               <option>Appartement / copropriété</option>
               <option>Bureau / cabinet</option>
@@ -432,7 +432,7 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
       <ul class="side-list">
         <li>Un rappel sous 24 heures</li>
         <li>Un audit gratuit sur site</li>
-        <li>Un chiffrage transparent sous 5 j</li>
+        <li>Un chiffrage transparent et détaillé</li>
         <li>Aucun engagement</li>
       </ul>
     </div>

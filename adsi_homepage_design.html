@@ -50,7 +50,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 
 /* ═══ NAV ═══ */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy-000);transition:background .3s ease,backdrop-filter .3s ease,height .2s ease;border-bottom:1px solid transparent;height:76px;display:flex;align-items:center}
-nav.scrolled{background:rgba(5,16,28,.72);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);border-bottom-color:rgba(255,255,255,.08);height:68px}
+nav.scrolled{background:linear-gradient(180deg,rgba(11,22,37,.92),rgba(6,15,26,.86));backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);border-bottom-color:rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 8px 28px -14px rgba(0,0,0,.55);height:68px}
 .nav-inner{max-width:var(--max);margin:0 auto;padding:0 32px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative}
 .nav-logo{flex-shrink:0;z-index:101;display:flex;align-items:center}
 .nav-logo img{height:40px;width:auto;display:block;transition:height .2s}
@@ -79,7 +79,7 @@ nav.dd-open .nav-dd .burger-icon span:nth-child(3){transform:translateY(-6px) ro
 nav.dd-open .nav-dd .chev{transform:rotate(180deg)}
 
 /* ═══ HERO ═══ */
-.hero{position:relative;color:#fff;overflow:hidden;padding:112px 0 128px;background:linear-gradient(rgba(5,16,28,.58),rgba(5,16,28,.72)),url('BANNIERES/PAGE%20ACCUEIL.jpg') center/cover no-repeat,var(--navy-000)}
+.hero{position:relative;color:#fff;overflow:hidden;padding:112px 0 128px;background:linear-gradient(rgba(5,16,28,.58),rgba(5,16,28,.96)),url('BANNIERES/PAGE%20ACCUEIL.jpg') center/cover no-repeat,var(--navy-000)}
 /* Uniform treatment for content images */
 .feat-img img,.case,.svc-visual img{transition:filter .3s ease}
 .feat-img img{filter:saturate(.92) contrast(1.02)}
@@ -90,10 +90,10 @@ nav.dd-open .nav-dd .chev{transform:rotate(180deg)}
 .block.alt.bg-cases::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(245,247,249,.86),rgba(245,247,249,.92)),url('PICTURES/001.jpg') center/cover no-repeat;z-index:-1}
 /* Service-visual cards reçoivent aussi une image subtile en fond */
 .svc-visual.with-img{position:relative}
-.svc-visual.with-img::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(5,16,28,.72),rgba(5,16,28,.85));z-index:1;pointer-events:none}
+.svc-visual.with-img::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(5,16,28,.96),rgba(5,16,28,.85));z-index:1;pointer-events:none}
 .svc-visual.with-img>*{position:relative;z-index:2}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.4) 100%);pointer-events:none;z-index:1}
-.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr 1fr;gap:72px;align-items:center}
+.hero-inner{position:relative;z-index:2;display:block;max-width:880px}
 .hero-eyebrow{display:flex;align-items:center;gap:14px;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.65);text-transform:uppercase;margin-bottom:32px;flex-wrap:wrap}
 .hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--red)}
 .hero-eyebrow .dot-green{width:6px;height:6px;background:#22c55e;border-radius:50%;margin-left:4px;animation:pulse-green 2s infinite}
@@ -109,29 +109,6 @@ nav.dd-open .nav-dd .chev{transform:rotate(180deg)}
 .hero-trust span{display:inline-flex;align-items:center;gap:8px}
 .hero-trust svg{width:14px;height:14px;color:var(--red);flex-shrink:0}
 
-/* Hero data panel */
-.hero-panel{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden}
-.hero-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--red) 20%,var(--red) 80%,transparent);opacity:.7}
-.panel-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.06)}
-.panel-title{font-size:11px;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase}
-.panel-status{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;color:#86efac;letter-spacing:.08em;text-transform:uppercase}
-.panel-status .pulse-dot{background:#22c55e;animation-name:pulse-green}
-.panel-stats{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(255,255,255,.06)}
-.panel-stat{padding:20px;border-right:1px solid rgba(255,255,255,.06)}
-.panel-stat:last-child{border-right:none}
-.panel-stat-label{font-size:10px;font-weight:600;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
-.panel-stat-val{font-size:26px;font-weight:700;color:#fff;line-height:1;letter-spacing:-.02em;font-feature-settings:'tnum' 1}
-.panel-stat-val .u{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);margin-left:2px}
-.panel-feed{padding:16px 20px}
-.panel-feed-h{font-size:10px;font-weight:600;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
-.panel-evt{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:12.5px;font-weight:500;opacity:0;animation:fadeEvt .5s ease forwards}
-.panel-evt:nth-child(2){animation-delay:.15s}.panel-evt:nth-child(3){animation-delay:.3s}.panel-evt:nth-child(4){animation-delay:.45s}
-@keyframes fadeEvt{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}
-.panel-evt:last-child{border-bottom:none}
-.panel-evt-dot{width:8px;height:8px;flex-shrink:0}
-.panel-evt-dot.g{background:#22c55e}.panel-evt-dot.b{background:var(--teal-300)}.panel-evt-dot.r{background:var(--red)}
-.panel-evt-txt{flex:1;color:rgba(255,255,255,.8)}
-.panel-evt-tim{font-size:11px;color:rgba(255,255,255,.45);font-weight:500;font-feature-settings:'tnum' 1;letter-spacing:.04em}
 
 /* ═══ KPI ═══ */
 .kpi{background:#fff;border-top:4px solid var(--navy-000);border-bottom:1px solid var(--line);padding:0}
@@ -208,6 +185,14 @@ h2.section-title .accent{color:var(--teal-500)}
 .svc-row-lab::before{content:'';width:4px;height:4px;background:rgba(255,255,255,.35);flex-shrink:0}
 .svc-row-val{font-weight:700;letter-spacing:.02em;font-feature-settings:'tnum' 1;white-space:nowrap}
 .svc-row-val.ok{color:#86efac}.svc-row-val.alert{color:#fca5a5}.svc-row-val.info{color:var(--teal-300)}
+/* Visuel photo (remplace les anciens encarts data) */
+.svc-visual.svc-photo{min-height:460px;justify-content:flex-end;background-size:cover;background-position:center;background-repeat:no-repeat}
+.svc-visual.svc-photo.bg-protocol{background-image:linear-gradient(rgba(5,16,28,.15),rgba(5,16,28,.78)),url('PICTURES/17Hg34906E985GoBYNP3.jpg')}
+.svc-visual.svc-photo.bg-ia{background-image:linear-gradient(rgba(5,16,28,.15),rgba(5,16,28,.78)),url('PICTURES/IA%20ET%20ANALYSE%20VIDEO.jpg')}
+.svc-visual.svc-photo.bg-audit{background-image:linear-gradient(rgba(5,16,28,.15),rgba(5,16,28,.78)),url('PICTURES/AUDIT.jpg')}
+.svc-caption{padding:26px 28px;border-top:1px solid rgba(255,255,255,.12)}
+.svc-caption-t{display:flex;align-items:center;gap:9px;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.svc-caption-d{font-size:14px;color:rgba(255,255,255,.78);line-height:1.55;margin-top:8px;max-width:380px}
 
 /* ═══ POURQUOI ═══ */
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
@@ -403,8 +388,6 @@ footer{background:var(--navy-000);color:rgba(255,255,255,.6);padding:72px 0 32px
   .section-cta{flex-direction:column;align-items:stretch}
   .section-cta-btns{flex-direction:column}
   .section-cta-btns>*{width:100%;justify-content:center}
-  .panel-stats{grid-template-columns:1fr 1fr}
-  .panel-stat-val{font-size:22px}
   .foot-bottom{justify-content:flex-start;flex-direction:column;align-items:flex-start;gap:8px}
 }
 img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
@@ -443,7 +426,7 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
       <div>
         <div class="hero-eyebrow reveal"><span>Agence Digital de Surveillance · depuis 1963</span><span class="dot-green"></span></div>
         <h1 class="reveal d1">Votre sécurité,<br>entre expertise<br>humaine <span class="accent">et technologie.</span></h1>
-        <p class="hero-sub reveal d2">Télésurveillance, vidéosurveillance et conseil sur mesure en Suisse romande. Une centrale active 24/7, un interlocuteur unique, une réponse sous 24 h.</p>
+        <p class="hero-sub reveal d2">Télésurveillance, vidéosurveillance, préconisation, installation. Du conseil standard au sur mesure en Suisse romande.<br>Un savoir-faire opérationnel grâce à sa centrale active 24/7, un interlocuteur unique, une réponse sous 24 h.</p>
         <div class="hero-ctas reveal d3">
           <a href="adsi_devis.html" class="btn-primary">Demander un devis</a>
           <a href="tel:+41581220002" class="btn-outline"><span class="pulse-dot"></span>+41 58 122 00 02</a>
@@ -452,19 +435,6 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
           <span><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2L3 5v6c0 4.3 3 8.2 7 9 4-.8 7-4.7 7-9V5l-7-3z"/></svg>Déplacement offert</span>
           <span><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2L3 5v6c0 4.3 3 8.2 7 9 4-.8 7-4.7 7-9V5l-7-3z"/></svg>Réponse sous 24 h</span>
           <span><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2L3 5v6c0 4.3 3 8.2 7 9 4-.8 7-4.7 7-9V5l-7-3z"/></svg>Sans engagement</span>
-        </div>
-      </div>
-      <div class="hero-panel reveal-zoom d2">
-        <div class="panel-head"><span class="panel-title">Centrale ADSI — Live</span><span class="panel-status"><span class="pulse-dot"></span>En ligne</span></div>
-        <div class="panel-stats">
-          <div class="panel-stat"><div class="panel-stat-label">Sites supervisés</div><div class="panel-stat-val" data-count="2847">2 847</div></div>
-          <div class="panel-stat"><div class="panel-stat-label">Qualif. moy.</div><div class="panel-stat-val" data-count="42" data-suffix="s">42<span class="u">s</span></div></div>
-        </div>
-        <div class="panel-feed">
-          <div class="panel-feed-h">// Flux en direct</div>
-          <div class="panel-evt"><div class="panel-evt-dot g"></div><div class="panel-evt-txt">Alarme qualifiée — GE-042</div><div class="panel-evt-tim">T-02m</div></div>
-          <div class="panel-evt"><div class="panel-evt-dot b"></div><div class="panel-evt-txt">Accès autorisé — VD-108</div><div class="panel-evt-tim">T-06m</div></div>
-          <div class="panel-evt"><div class="panel-evt-dot r"></div><div class="panel-evt-txt">Intervention déclenchée — JU-011</div><div class="panel-evt-tim">T-11m</div></div>
         </div>
       </div>
     </div>
@@ -476,7 +446,7 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
   <div class="kpi-inner">
     <div class="kpi-cell reveal"><div class="kpi-num" data-count="60" data-suffix="+"><span>60</span><span class="u">+</span></div><div class="kpi-lab">Années d'expertise<br>depuis 1963</div></div>
     <div class="kpi-cell reveal d1"><div class="kpi-num">24/7</div><div class="kpi-lab">Centrale active<br>sans interruption</div></div>
-    <div class="kpi-cell reveal d2"><div class="kpi-num" data-count="60" data-prefix="&lt; " data-suffix="s">&lt; <span>60</span><span class="u">s</span></div><div class="kpi-lab">Qualification<br>d'alarme moyenne</div></div>
+    <div class="kpi-cell reveal d2"><div class="kpi-num" data-count="100" data-prefix="+">+100</div><div class="kpi-lab">Patrouilles simultanément<br>actives sur le terrain</div></div>
     <div class="kpi-cell reveal d3"><div class="kpi-num" data-count="6">6</div><div class="kpi-lab">Cantons couverts<br>en Suisse romande</div></div>
   </div>
 </section>
@@ -487,7 +457,7 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
     <div class="service-inner">
       <div class="service-content reveal-left">
         <h2><span class="section-num">/ 01</span> Télésurveillance — Vos alarmes traitées <span class="accent">selon vos règles.</span></h2>
-        <p class="svc-desc">Une véritable loge virtuelle. Chaque alarme est qualifiée et traitée selon un protocole défini avec vous — standard éprouvé ou entièrement sur mesure.</p>
+        <p class="svc-desc">Une véritable loge virtuelle. Chaque alarme est qualifiée et traitée selon un protocole défini avec vous : standard éprouvé ou entièrement sur mesure.</p>
         <ul class="svc-list">
           <li>Traitement standard ou personnalisé</li>
           <li>Protection des travailleurs isolés</li>
@@ -499,14 +469,10 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
           <a href="adsi_devis.html" class="btn-link">Demander un devis →</a>
         </div>
       </div>
-      <div class="svc-visual bg-protocol reveal-right d2">
-        <div class="svc-viz-head"><span class="svc-viz-title">Protocole d'alarme</span><span class="svc-viz-pill"><span class="pulse-dot"></span>Actif</span></div>
-        <div class="svc-metric-big"><div class="num">&lt; 60 s</div><div class="lab">Temps moyen de qualification</div></div>
-        <div class="svc-rows">
-          <div class="svc-row"><span class="svc-row-lab">Détection capteur</span><span class="svc-row-val ok">02 s</span></div>
-          <div class="svc-row"><span class="svc-row-lab">Qualification centrale</span><span class="svc-row-val ok">42 s</span></div>
-          <div class="svc-row"><span class="svc-row-lab">Appel client</span><span class="svc-row-val ok">55 s</span></div>
-          <div class="svc-row"><span class="svc-row-lab">Intervention locale</span><span class="svc-row-val info">En route</span></div>
+      <div class="svc-visual svc-photo bg-protocol reveal-right d2">
+        <div class="svc-caption">
+          <div class="svc-caption-t"><span class="pulse-dot"></span>Centrale active 24/7</div>
+          <div class="svc-caption-d">Chaque alarme est qualifiée par un opérateur, selon le protocole défini avec vous.</div>
         </div>
       </div>
     </div>
@@ -531,14 +497,10 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
           <a href="adsi_devis.html" class="btn-link">Demander un devis →</a>
         </div>
       </div>
-      <div class="svc-visual bg-ia reveal-right d2">
-        <div class="svc-viz-head"><span class="svc-viz-title">Analyse IA — Flux caméras</span><span class="svc-viz-pill"><span class="pulse-dot"></span>4 flux</span></div>
-        <div class="svc-metric-big"><div class="num">− 85 %</div><div class="lab">Fausses alertes après paramétrage</div></div>
-        <div class="svc-rows">
-          <div class="svc-row"><span class="svc-row-lab">Cam-01 · Entrée</span><span class="svc-row-val ok">Normal</span></div>
-          <div class="svc-row"><span class="svc-row-lab">Cam-02 · Parking</span><span class="svc-row-val alert">Mouvement</span></div>
-          <div class="svc-row"><span class="svc-row-lab">Cam-03 · Arrière</span><span class="svc-row-val ok">Normal</span></div>
-          <div class="svc-row"><span class="svc-row-lab">Audio · Périmètre</span><span class="svc-row-val ok">RAS</span></div>
+      <div class="svc-visual svc-photo bg-ia reveal-right d2">
+        <div class="svc-caption">
+          <div class="svc-caption-t"><span class="pulse-dot"></span>Analyse IA vidéo & audio</div>
+          <div class="svc-caption-d">Des caméras paramétrées pour ne signaler que ce qui compte vraiment, et ignorer le reste.</div>
         </div>
       </div>
     </div>
@@ -563,14 +525,10 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
           <a href="adsi_devis.html" class="btn-link">Demander un audit →</a>
         </div>
       </div>
-      <div class="svc-visual bg-audit reveal-right d2">
-        <div class="svc-viz-head"><span class="svc-viz-title">Audit opérationnel</span><span class="svc-viz-pill" style="color:var(--teal-300)"><span class="pulse-dot" style="background:var(--teal-300);animation:none"></span>En cours</span></div>
-        <div class="svc-metric-big"><div class="num">5 j</div><div class="lab">Pour un rapport d'audit complet</div></div>
-        <div class="svc-rows">
-          <div class="svc-row"><span class="svc-row-lab">Cartographie risques</span><span class="svc-row-val ok">Terminé</span></div>
-          <div class="svc-row"><span class="svc-row-lab">Adéquation humain/techno</span><span class="svc-row-val ok">Terminé</span></div>
-          <div class="svc-row"><span class="svc-row-lab">Paramétrage IA</span><span class="svc-row-val info">En cours</span></div>
-          <div class="svc-row"><span class="svc-row-lab">Rapport final</span><span class="svc-row-val">J+5</span></div>
+      <div class="svc-visual svc-photo bg-audit reveal-right d2">
+        <div class="svc-caption">
+          <div class="svc-caption-t"><span class="pulse-dot" style="background:var(--teal-300);animation:none"></span>Audit opérationnel sur site</div>
+          <div class="svc-caption-d">60 ans d'expérience terrain derrière chaque recommandation, sans dogme technologique.</div>
         </div>
       </div>
     </div>
@@ -585,8 +543,8 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
       <p class="section-lead">Les grands groupes standardisent. Nous personnalisons. Depuis 1963, nous construisons des solutions qui correspondent réellement aux lieux, aux risques et aux personnes.</p>
     </div>
     <div class="why-grid mobile-carousel">
-      <div class="why-card reveal"><div class="why-num">/ 01</div><h3>Humain & proximité</h3><p>Un interlocuteur unique. Une centrale qui vous connaît. Pas de ping-pong entre services — des gens qui suivent votre dossier du début à la fin.</p></div>
-      <div class="why-card reveal d1"><div class="why-num">/ 02</div><h3>Sur mesure, vraiment</h3><p>Chaque installation est étudiée selon votre lieu et vos risques. Aucun dossier ne se ressemble — c'est une volonté, pas une contrainte.</p></div>
+      <div class="why-card reveal"><div class="why-num">/ 01</div><h3>Humain & proximité</h3><p>Un interlocuteur unique. Une centrale qui vous connaît. Pas de ping-pong entre services : des gens qui suivent votre dossier du début à la fin.</p></div>
+      <div class="why-card reveal d1"><div class="why-num">/ 02</div><h3>Sur mesure, vraiment</h3><p>Chaque installation est étudiée selon votre lieu et vos risques. Aucun dossier ne se ressemble : c'est une volonté, pas une contrainte.</p></div>
       <div class="why-card reveal d2"><div class="why-num">/ 03</div><h3>Technologie maîtrisée</h3><p>Jablotron, Hikvision, Ajax, Risco, Paradox, Resideo. Les meilleures marques, avec un paramétrage rigoureux. Jamais d'installation à l'aveugle.</p></div>
     </div>
     <div class="card-stepper" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
@@ -619,28 +577,6 @@ img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
       <div class="section-cta-btns">
         <a href="adsi_devis.html" class="btn-dark">Démarrer ma demande</a>
         <a href="adsi_contact.html" class="btn-link">Ou nous contacter →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CAS -->
-<section class="block alt">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2 class="section-title"><span class="section-label">Réalisations</span>Des situations concrètes, <span class="accent">des résultats mesurables.</span></h2>
-    </div>
-    <div class="cases mobile-carousel">
-      <div class="case reveal" style="background-image:linear-gradient(rgba(255,255,255,.82),rgba(255,255,255,.9)),url('PICTURES/Particulier%20%C2%B7%20Villa%20priv%C3%A9e%20%C2%B7%20Gen%C3%A8ve.jpg');background-size:cover;background-position:center"><div class="case-cat">Villa privée — Genève</div><h3>Sécurisation complète pendant les absences prolongées</h3><p class="case-desc">Alarme intrusion discrète, vidéosurveillance IA et télésurveillance 24/7 avec protocole personnalisé.</p><div class="case-metric"><div class="case-metric-v" data-count="0">0</div><div class="case-metric-l">intrusion depuis la mise en service</div></div><a href="adsi_telesurveilance_v2.html" class="case-cta">Voir la télésurveillance →</a></div>
-      <div class="case reveal d1" style="background-image:linear-gradient(rgba(255,255,255,.82),rgba(255,255,255,.9)),url('PICTURES/Entreprise%20%C2%B7%20PME%20industrielle%20%C2%B7%20Vaud.jpg');background-size:cover;background-position:center"><div class="case-cat">PME industrielle — Vaud</div><h3>3 sites, contrôle d'accès centralisé</h3><p class="case-desc">Suivi temps réel, vidéo des zones sensibles, escalades d'alarmes selon horaire et type d'événement.</p><div class="case-metric"><div class="case-metric-v" data-count="100" data-suffix=" %">100 %</div><div class="case-metric-l">des entrées tracées sur 3 sites</div></div><a href="adsi_videosurveillance.html" class="case-cta">Voir la vidéosurveillance →</a></div>
-      <div class="case reveal d2" style="background-image:linear-gradient(rgba(255,255,255,.82),rgba(255,255,255,.9)),url('PICTURES/Construction%20%C2%B7%20Chantier%20%C2%B7%20Jura.jpg');background-size:cover;background-position:center"><div class="case-cat">Chantier — Jura</div><h3>Là où deux autres centrales avaient refusé</h3><p class="case-desc">Vidéo mobile, alarmes périmétriques, télésurveillance adaptée aux phases de chantier.</p><div class="case-metric"><div class="case-metric-v" data-count="0">0</div><div class="case-metric-l">vol de matériel après déploiement</div></div><a href="adsi_conseil_audit.html" class="case-cta">Voir l'audit →</a></div>
-    </div>
-    <div class="card-stepper" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
-    <div class="section-cta reveal">
-      <div class="section-cta-txt">Votre situation ressemble à l'un de ces cas ? <strong>Parlons-en.</strong></div>
-      <div class="section-cta-btns">
-        <a href="adsi_devis.html" class="btn-dark">Demander un devis</a>
-        <a href="adsi_contact.html" class="btn-link">Nous contacter →</a>
       </div>
     </div>
   </div>

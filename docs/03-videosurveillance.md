@@ -55,7 +55,7 @@ Points :
 **Voir plus, alerter moins.**
 Vidéo brute = bruit. IA bien paramétrée = information. Zones sensibles, comportements anormaux, sons d'effraction.
 
-Métriques : − 85 % fausses alertes · 24/7 analyse · < 2 s détection
+Métriques : 24/7 analyse
 
 Panneau live démo :
 - Cam-01 Entrée : Normal
